@@ -1,4 +1,7 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Footer.css'
+import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -9,7 +12,7 @@ const Footer = () => {
               {/* <h3 className="footer-logo fs-1 fw-semibold">LOGO.</h3> */}
               <img
                 className="footer-logo"
-                src={"https://i.ibb.co/DYJyys2/Cars-Land-logo.png"}
+                src={"https://i.ibb.co/fvhBpSG/shutter-safari-logo.jpg"}
                 alt=""
               />
               <p className="footer-logo-description mb-5">
@@ -96,10 +99,10 @@ const Footer = () => {
                     day: "numeric",
                   })}{" "}
                   All rights reserved by{" "}
-                  <Link href="" className="footer__link">
+                  <Link className="footer__link my-name">
                     <span className="">Md Imon Hossain.</span>
                   </Link>{" "}
-                  For more information contact us with email.
+                  For more information contact with me email.
                 </p>
               </div>
             </div>

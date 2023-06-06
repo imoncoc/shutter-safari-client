@@ -1,0 +1,54 @@
+.bg-footer {
+    background-color: var(--main-very-dark-blue);
+    color: var(--main-white);
+}
+
+.my-name{
+    color: var(--main-lime-500);
+}
+
+.footer-logo {
+    width: 10rem;
+    margin-bottom: 1rem;
+}
+
+
+.footer-icon {
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    padding: 8px 12px;
+    border-radius: 2px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.footer-icon-twitter:hover {
+    background-color: var(--main-soft-blue);
+    scale: 1.05;
+}
+
+.footer-icon-facebook:hover {
+    background-color: var(--main-soft-blue);
+    scale: 1.05;
+}
+
+.footer-icon-instagram:hover {
+    background-color: var(--main-soft-red);
+    scale: 1.05;
+}
+
+
+.footer-input:focus {
+    color: var(--main-white);
+}
+.footer-input::placeholder {
+    color: var(--main-soft-blue);
+}
+
+.footer-signup-button {
+    background-color: var(--main-lime-600);
+}
+
+
+.footer__link {
+    text-decoration: none;
+}
