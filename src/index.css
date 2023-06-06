@@ -1,0 +1,34 @@
+:root {
+  --main-lime-500: #84CC16;
+  --main-lime-600: #65A30D;
+  --main-soft-blue: hsl(231, 69%, 60%);
+  --main-soft-red: hsl(0, 94%, 66%);
+  --main-grayish-blue: hsl(0, 94%, 66%);
+  --main-very-dark-blue: hsl(229, 31%, 21%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+.active {
+  color: var(--main-lime-500) !important;
+  border-bottom: 0.1rem solid var(--main-lime-500) !important;
+}
+
+.default {
+  color: #242325 !important;
+  transition: all 0.3s;
+}
+.default:hover {
+  color: var(--main-lime-500) !important;
+}
