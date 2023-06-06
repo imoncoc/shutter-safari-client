@@ -4,6 +4,7 @@ import { AuthContext } from "../../../providers/AuthProvider";
 import './Navbar.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCameraRetro } from "@fortawesome/free-solid-svg-icons";
+import ThirdButton from "../../../components/Reuseable/Button/ThirdButton/ThirdButton";
 
 
 const Navbar = () => {
@@ -82,7 +83,7 @@ const Navbar = () => {
                 </button>
               ) : (
                 <Link to="/login">
-                  <button className="btn btn-danger"> Login</button>
+                  <ThirdButton name={"Login"}></ThirdButton>
                 </Link>
               )}
             </ul>

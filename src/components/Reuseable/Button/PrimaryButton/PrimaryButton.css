@@ -1,0 +1,16 @@
+
+.shatter-primary-button{
+    padding: 0.6rem 2rem;
+    color: var(--main-white);
+    background-color: var(--main-lime-600);
+    border: 2px solid var(--main-lime-600);
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+}
+
+.shatter-primary-button:hover{
+    color: var(--main-lime-600);
+    background-color: var(--main-white);
+    background-color: transparent;
+}
