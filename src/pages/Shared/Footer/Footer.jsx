@@ -70,7 +70,7 @@ const Footer = () => {
               <h2 className="footer-products fs-3">SUBSCRIBE</h2>
               <div className="footer-product-items">
                 <h4 className="my-5">
-                  Subscribe our cars Land and get discount 30% off
+                  Subscribe our Shutter Safari and get discount 30% off
                 </h4>
 
                 <div className="input-group mb-3 overflow-hidden">
