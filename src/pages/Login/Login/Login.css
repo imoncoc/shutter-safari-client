@@ -19,6 +19,11 @@
     background: #344a72;
 }
 
+.password-sec:hover,
+.password-sec:focus{
+    color: red;
+}
+
 /* .login-btn {
     background: var(--mainBlue);
     color: #fff;

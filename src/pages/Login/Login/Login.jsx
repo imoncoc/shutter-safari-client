@@ -81,6 +81,7 @@ const Login = () => {
                       },
                     })}
                   />
+
                   {errors.email && (
                     <p role="alert" className="alert alert-danger my-2 p-2">
                       {errors.email.message}
@@ -99,7 +100,6 @@ const Login = () => {
                       })}
                     />
                     <div className="input-group-text bg-white border-start-0">
-                      
                       {showPassword ? (
                         <FontAwesomeIcon
                           icon={faEye}
@@ -133,8 +133,7 @@ const Login = () => {
                   </p>
                 </div>
                 <div className="text-center">
-                  
-                  <div className='w-100'>
+                  <div className="w-100">
                     <PrimaryButton
                       name="Submit"
                       width={"w-100"}
@@ -147,10 +146,6 @@ const Login = () => {
                 <span className="text-muted">Or login with</span>
               </div>
               <SocialLogin></SocialLogin>
-
-              
-
-             
             </div>
           </div>
         </div>

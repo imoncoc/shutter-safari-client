@@ -1,0 +1,17 @@
+.signUp-section {
+    border: 2rem solid var(--main-lime-500);
+}
+
+@media screen and (max-width: 992px) {
+    .signUp-section {
+        border-width: 1.5rem;
+        /* Reduce border size for smaller screens */
+    }
+}
+
+@media screen and (max-width: 668px) {
+    .signUp-section {
+        border-width: 1rem;
+        /* Reduce border size for smaller screens */
+    }
+}
