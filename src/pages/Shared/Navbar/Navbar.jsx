@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 import './Navbar.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCameraRetro, faMoon, faSun, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faCameraRetro, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import ThirdButton from "../../../components/Reuseable/Button/ThirdButton/ThirdButton";
 import PrimaryButton from "../../../components/Reuseable/Button/PrimaryButton/PrimaryButton";
 

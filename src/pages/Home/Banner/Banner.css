@@ -19,3 +19,8 @@
     /* font-size: 3.2rem; */
     color: var(--main-lime-500);
 }
+
+.height-vh-80 {
+    height: 85vh !important;
+    filter: brightness(0.6);
+}
