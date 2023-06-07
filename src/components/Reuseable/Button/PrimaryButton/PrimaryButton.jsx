@@ -1,8 +1,9 @@
 import './PrimaryButton.css'
 
-const PrimaryButton = ({name}) => {
+const PrimaryButton = ({name, width}) => {
+
     return (
-        <button className="shatter-primary-button">
+        <button className={`shatter-primary-button ${width}`} type='submit'>
             {name}
         </button>
     );

@@ -5,6 +5,7 @@ import './Navbar.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCameraRetro } from "@fortawesome/free-solid-svg-icons";
 import ThirdButton from "../../../components/Reuseable/Button/ThirdButton/ThirdButton";
+import PrimaryButton from "../../../components/Reuseable/Button/PrimaryButton/PrimaryButton";
 
 
 const Navbar = () => {
@@ -54,7 +55,6 @@ const Navbar = () => {
                   Home
                 </NavLink>
               </li>
-              
 
               <li className="nav-item fw-semibold">
                 <NavLink
@@ -77,13 +77,16 @@ const Navbar = () => {
                 </NavLink>
               </li>
               {user ? (
-                <button onClick={handleLogOut} className="btn btn-danger">
-                  {" "}
-                  Logout
-                </button>
+                // <button onClick={handleLogOut} className="btn btn-danger">
+                //   {" "}
+                //   Logout
+                // </button>
+                <span onClick={handleLogOut}>
+                  <ThirdButton name={"Logout"}></ThirdButton>
+                </span>
               ) : (
                 <Link to="/login">
-                  <ThirdButton name={"Login"}></ThirdButton>
+                  <PrimaryButton name={"Login"}></PrimaryButton>
                 </Link>
               )}
             </ul>

@@ -1,3 +1,60 @@
 .login-section{
     border: 2rem solid var(--main-lime-500);
 }
+@media screen and (max-width: 992px) {
+    .login-section {
+        border-width: 1.5rem;
+        /* Reduce border size for smaller screens */
+    }
+}
+@media screen and (max-width: 668px) {
+    .login-section {
+        border-width: 1rem;
+        /* Reduce border size for smaller screens */
+    }
+}
+
+
+.login-bg {
+    background: #344a72;
+}
+
+/* .login-btn {
+    background: var(--mainBlue);
+    color: #fff;
+}
+
+.login-btn:hover {
+    background: var(--transparentBlue);
+    color: #fff;
+} */
+
+
+.or-divider {
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+}
+
+.or-divider:before,
+.or-divider:after {
+    content: "";
+    height: 1px;
+    background-color: #ccc;
+    position: absolute;
+    top: 50%;
+    width: 40%;
+}
+
+.or-divider:before {
+    left: 0;
+}
+
+.or-divider:after {
+    right: 0;
+}
+
+
+.bg-icon {
+    padding: 6px 10px;
+}
