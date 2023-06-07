@@ -1,3 +1,57 @@
 .shutter-logo {
     width: 5rem;
 }
+
+.toggle-icon {
+    font-size: 1.5rem;
+    /* Adjust the size as needed */
+    cursor: pointer;
+    border: 2px solid #84CC16;
+    /* Add a border to the icon */
+    border-radius: 50%;
+    /* Make the border circular */
+    padding: 0.5rem;
+    /* Adjust the padding as needed */
+    transition: all 0.3s ease;
+    /* Add a smooth transition effect */
+    position: relative;
+    /* Enable relative positioning */
+    color: #84CC16;
+    /* Set the color for both themes */
+}
+
+.toggle-icon::after {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border: 2px solid #84CC16;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.toggle-icon[data-bs-theme="light"]::before {
+    content: "\f185";
+    /* Light theme icon (e.g., sun) */
+    color: #f6c332;
+    /* Set the color for the light theme icon */
+}
+
+.toggle-icon[data-bs-theme="dark"]::before {
+    content: "\f186";
+    /* Dark theme icon (e.g., moon) */
+    color: #a8a8a8;
+    /* Set the color for the dark theme icon */
+}
+
+.toggle-icon:hover {
+    transform: rotate(90deg);
+    /* Add a rotation effect on hover */
+}
+
+.toggle-icon:hover::after {
+    opacity: 1;
+}

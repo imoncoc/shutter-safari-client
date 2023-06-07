@@ -27,7 +27,7 @@ body {
 }
 
 .default {
-  color: #242325 !important;
+  color: var(--main-grayish-blue) !important;
   transition: all 0.3s;
 }
 .default:hover {
