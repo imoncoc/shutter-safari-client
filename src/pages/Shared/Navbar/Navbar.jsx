@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCameraRetro, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import ThirdButton from "../../../components/Reuseable/Button/ThirdButton/ThirdButton";
 import PrimaryButton from "../../../components/Reuseable/Button/PrimaryButton/PrimaryButton";
+import { Helmet } from "react-helmet-async";
 
 
 const Navbar = () => {
@@ -42,77 +43,86 @@ const Navbar = () => {
 
 
     return (
-      <nav className="navbar navbar-expand-lg navbar-light px-5 py-3">
-        <div className="container">
-          <Link to="/" className="navbar-brand my-0 py-0">
-            <div className="d-flex align-items-center">
-              <h2 style={{ color: "var(--main-lime-600)" }}>
-                <FontAwesomeIcon icon={faCameraRetro} />
-              </h2>
-              <h4
-                className="fw-bold text-uppercase ms-3"
-                style={{ color: "var(--main-lime-600)" }}
-              >
-                Shutter Safari
-              </h4>
-            </div>
-          </Link>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#myNavbar"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="myNavbar">
-            <ul className="navbar-nav ms-auto">
-              <li className="nav-item fw-semibold">
-                <NavLink
-                  to="/"
-                  className={({ isActive }) =>
-                    isActive ? "nav-link active" : "nav-link default"
-                  }
+      <>
+      <Helmet>
+        <title>Shutter Safari | Home</title>
+      </Helmet>
+        <nav className="navbar navbar-expand-lg navbar-light px-5 py-3">
+          <div className="container">
+            <Link to="/" className="navbar-brand my-0 py-0">
+              <div className="d-flex align-items-center">
+                <h2 style={{ color: "var(--main-lime-600)" }}>
+                  <FontAwesomeIcon icon={faCameraRetro} />
+                </h2>
+                <h4
+                  className="fw-bold text-uppercase ms-3"
+                  style={{ color: "var(--main-lime-600)" }}
                 >
-                  Home
-                </NavLink>
-              </li>
+                  Shutter Safari
+                </h4>
+              </div>
+            </Link>
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#myNavbar"
+            >
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="myNavbar">
+              <ul className="navbar-nav ms-auto">
+                <li className="nav-item fw-semibold">
+                  <NavLink
+                    to="/"
+                    className={({ isActive }) =>
+                      isActive ? "nav-link active" : "nav-link default"
+                    }
+                  >
+                    Home
+                  </NavLink>
+                </li>
 
-              <li className="nav-item fw-semibold">
-                <NavLink
-                  to="/blogs"
-                  className={({ isActive }) =>
-                    isActive ? "nav-link active" : "nav-link default"
-                  }
-                >
-                  Blogs
-                </NavLink>
-              </li>
-              <li className="nav-item fw-semibold">
-                <NavLink
-                  to="/dashboard"
-                  className={({ isActive }) =>
-                    isActive ? "nav-link active" : "nav-link default"
-                  }
-                >
-                  DashBoard
-                </NavLink>
-              </li>
-              <li className="me-2">
-                {user ? (
-                  <div>
-                    <img title={user?.displayName} className="img-fluid user-img me-2" src={user.photoURL} alt="" />
-                    <span onClick={handleLogOut}>
-                      <ThirdButton name={"Logout"}></ThirdButton>
-                    </span>
-                  </div>
-                ) : (
-                  <Link to="/login">
-                    <PrimaryButton name={"Login"}></PrimaryButton>
-                  </Link>
-                )}
+                <li className="nav-item fw-semibold">
+                  <NavLink
+                    to="/blogs"
+                    className={({ isActive }) =>
+                      isActive ? "nav-link active" : "nav-link default"
+                    }
+                  >
+                    Blogs
+                  </NavLink>
+                </li>
+                <li className="nav-item fw-semibold">
+                  <NavLink
+                    to="/dashboard"
+                    className={({ isActive }) =>
+                      isActive ? "nav-link active" : "nav-link default"
+                    }
+                  >
+                    DashBoard
+                  </NavLink>
+                </li>
+                <li className="me-2">
+                  {user ? (
+                    <div>
+                      <img
+                        title={user?.displayName}
+                        className="img-fluid user-img me-2"
+                        src={user.photoURL}
+                        alt=""
+                      />
+                      <span onClick={handleLogOut}>
+                        <ThirdButton name={"Logout"}></ThirdButton>
+                      </span>
+                    </div>
+                  ) : (
+                    <Link to="/login">
+                      <PrimaryButton name={"Login"}></PrimaryButton>
+                    </Link>
+                  )}
 
-                {/* {user ? (
+                  {/* {user ? (
                   <div
                     className="d-flex justify-content-around align-items-center text-center"
                     style={{ width: "20rem" }}
@@ -168,30 +178,31 @@ const Navbar = () => {
                     <button className="btn btn-outline-info">Login</button>
                   </Link>
                 )} */}
-              </li>
-              <li className="my-1">
-                <div onClick={handleToggle}>
-                  {theme ? (
-                    <span className="toggle-icon">
-                      <FontAwesomeIcon
-                        className="px-1 text-dark"
-                        icon={faMoon}
-                      />
-                    </span>
-                  ) : (
-                    <span className="toggle-icon">
-                      <FontAwesomeIcon
-                        className="px-1 text-warning"
-                        icon={faSun}
-                      />
-                    </span>
-                  )}
-                </div>
-              </li>
-            </ul>
+                </li>
+                <li className="my-1">
+                  <div onClick={handleToggle}>
+                    {theme ? (
+                      <span className="toggle-icon">
+                        <FontAwesomeIcon
+                          className="px-1 text-dark"
+                          icon={faMoon}
+                        />
+                      </span>
+                    ) : (
+                      <span className="toggle-icon">
+                        <FontAwesomeIcon
+                          className="px-1 text-warning"
+                          icon={faSun}
+                        />
+                      </span>
+                    )}
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
-      </nav>
+        </nav>
+      </>
     );
 };
 
