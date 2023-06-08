@@ -1,0 +1,11 @@
+.error-bg {
+    height: calc(100vh);
+    background: url("https://i.ibb.co/KW6mdx5/404.jpg") center/cover fixed no-repeat;
+    object-fit: cover;
+    border: 1rem solid var(--main-lime-500);
+}
+
+.error-bg-text {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 2rem;
+}

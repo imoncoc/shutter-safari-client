@@ -4,7 +4,6 @@ import { AuthContext } from "../../../providers/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
-import { updateProfile } from "firebase/auth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import PrimaryButton from "../../../components/Reuseable/Button/PrimaryButton/PrimaryButton";
@@ -16,7 +15,7 @@ import Navbar from "../../Shared/Navbar/Navbar";
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const { createUser, auth, updateUserProfile } = useContext(AuthContext);
+  const { createUser,  updateUserProfile } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
@@ -30,7 +29,7 @@ const SignUp = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    const { email, password, name, confirmPassword, photoUrl } = data;
+    const { email, password, name } = data;
     console.log(data);
     
     

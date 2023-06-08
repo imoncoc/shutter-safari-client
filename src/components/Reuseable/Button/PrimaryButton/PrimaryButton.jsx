@@ -1,10 +1,10 @@
 import './PrimaryButton.css'
 
-const PrimaryButton = ({name, width}) => {
+const PrimaryButton = ({name, width, icon}) => {
 
     return (
         <button className={`shatter-primary-button ${width}`} type='submit'>
-            {name}
+            {icon}{name}
         </button>
     );
 };

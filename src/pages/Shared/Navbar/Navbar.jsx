@@ -44,9 +44,9 @@ const Navbar = () => {
 
     return (
       <>
-      <Helmet>
-        <title>Shutter Safari | Home</title>
-      </Helmet>
+        <Helmet>
+          <title>Shutter Safari | Home</title>
+        </Helmet>
         <nav className="navbar navbar-expand-lg navbar-light px-5 py-3 text-center">
           <div className="container">
             <Link to="/" className="navbar-brand my-0 py-0">
@@ -85,12 +85,22 @@ const Navbar = () => {
 
                 <li className="nav-item fw-semibold">
                   <NavLink
-                    to="/blogs"
+                    to="/instructors"
                     className={({ isActive }) =>
                       isActive ? "nav-link active" : "nav-link default"
                     }
                   >
-                    Blogs
+                    Instructors
+                  </NavLink>
+                </li>
+                <li className="nav-item fw-semibold">
+                  <NavLink
+                    to="/classes"
+                    className={({ isActive }) =>
+                      isActive ? "nav-link active" : "nav-link default"
+                    }
+                  >
+                    Classes
                   </NavLink>
                 </li>
                 <li className="nav-item fw-semibold">
