@@ -1,5 +1,5 @@
 
-.shatter-primary-button{
+.shutter-primary-button{
     padding: 0.6rem 2rem;
     color: var(--main-white);
     background-color: var(--main-lime-600);
@@ -9,7 +9,7 @@
     transition: all 0.3s;
 }
 
-.shatter-primary-button:hover{
+.shutter-primary-button:hover{
     color: var(--main-lime-600);
     background-color: var(--main-white);
     background-color: transparent;

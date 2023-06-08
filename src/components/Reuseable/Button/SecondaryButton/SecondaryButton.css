@@ -1,4 +1,4 @@
-.shatter-secondary-button {
+.shutter-secondary-button {
     padding: 0.6rem 2rem;
     color: var(--main-white);
     background-color: var(--main-soft-blue);
@@ -8,7 +8,7 @@
     transition: all 0.3s;
 }
 
-.shatter-secondary-button:hover {
+.shutter-secondary-button:hover {
     color: var(--main-soft-blue);
     background-color: var(--main-white);
     background-color: transparent;
