@@ -47,7 +47,7 @@ const Navbar = () => {
       <Helmet>
         <title>Shutter Safari | Home</title>
       </Helmet>
-        <nav className="navbar navbar-expand-lg navbar-light px-5 py-3">
+        <nav className="navbar navbar-expand-lg navbar-light px-5 py-3 text-center">
           <div className="container">
             <Link to="/" className="navbar-brand my-0 py-0">
               <div className="d-flex align-items-center">

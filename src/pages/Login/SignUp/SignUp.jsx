@@ -332,17 +332,6 @@ const SignUp = () => {
                   </p>
                 )}
 
-                <div className="">
-                  <p className="">
-                    Already a account?{" "}
-                    <Link
-                      to="/login"
-                      className="link-opacity-75-hover text-success"
-                    >
-                      Please Login
-                    </Link>
-                  </p>
-                </div>
                 <div className="text-center">
                   {/* <button type="submit" className="btn login-btn w-100 fw-bold">
                   Submit
@@ -353,6 +342,18 @@ const SignUp = () => {
                   ></PrimaryButton>
                 </div>
               </form>
+
+              <div className="my-3">
+                <p className="">
+                  Already a account?{" "}
+                  <Link
+                    to="/login"
+                    className="link-opacity-75-hover text-success"
+                  >
+                    Please Login
+                  </Link>
+                </p>
+              </div>
 
               <div className="or-divider">
                 <span className="text-muted">Or login with</span>
