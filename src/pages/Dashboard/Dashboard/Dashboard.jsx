@@ -1,10 +1,11 @@
+import DashboardNavbar from '../DashboardNavbar/DashboardNavbar';
 import './Dashboard.css'
 
 const Dashboard = () => {
     return (
-      <div>
-        <h2>Dashboard  Page</h2>
-      </div>
+      <>
+        <DashboardNavbar></DashboardNavbar>
+      </>
     );
 };
 

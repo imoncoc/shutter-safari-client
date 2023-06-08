@@ -25,7 +25,7 @@ const Class = ({classItem}) => {
 
     return (
       <div className="col-10 col-md-6 col-lg-4 mx-auto my-5">
-        <div className="class-card">
+        <div className={`class-card ${availableSeats === 0? "sit-red" : ""}`}>
           <img src={clsImage} alt="" className="img-fluid" />
           <div>
             <h2 className="card-title">{name}</h2>
@@ -45,10 +45,9 @@ const Class = ({classItem}) => {
             </p>
             <p className="card-description">Available {availableSeats} sets</p>
             <div className="d-flex justify-content-between">
-              {/* <PrimaryButton name={"Buy Now"}></PrimaryButton> */}
+              <PrimaryButton name={"Buy Now"}></PrimaryButton>
               <SecondaryButton
-                name={"View Details"}
-                width={"w-100"}
+                name={"Details"}
                 icon={<FontAwesomeIcon className="ms-2" icon={faArrowRight} />}
               ></SecondaryButton>
             </div>

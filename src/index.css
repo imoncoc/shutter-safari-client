@@ -6,6 +6,11 @@
   --main-grayish-blue: hsl(229, 8%, 60%);
   --main-very-dark-blue: hsl(229, 31%, 21%);
   --main-white: #fff;
+
+
+
+  --offcanvas-width: 270px;
+    --topNavbarHeight: 56px;
 }
 
 * {
@@ -32,4 +37,17 @@ body {
 }
 .default:hover {
   color: var(--main-lime-500) !important;
+}
+
+.text-lime-500{
+  color: var(--main-lime-500);
+}
+.bg-lime-500{
+  color: var(--main-lime-500);
+}
+.text-lime-600{
+  color: var(--main-lime-600);
+}
+.bg-lime-600{
+  color: var(--main-lime-600);
 }

@@ -43,3 +43,8 @@
 .see-more {
     text-align: end;
 }
+
+.sit-red{
+    background: var(--main-soft-red);
+    color: #ffffff;
+}
