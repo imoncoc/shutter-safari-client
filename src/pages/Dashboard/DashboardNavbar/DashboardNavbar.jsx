@@ -1,16 +1,27 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./DashboardNavbar.css";
-import { faMagnifyingGlass, faUser } from "@fortawesome/free-solid-svg-icons";
+import {
+  faHouse,
+  faMagnifyingGlass,
+  faUser,
+  faCalendarDays,
+  faCartShopping,
+  faPersonChalkboard,
+  faChalkboardUser,
+} from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import TestNav from "../TestNav/TestNav";
 import useAdmin from "../../../hooks/useAdmin";
 import useInstructor from "../../../hooks/useInstructor";
+import useUser from "../../../hooks/useUser";
 
 const DashboardNavbar = () => {
   const [isAdmin] = useAdmin();
   const [isInstructor] = useInstructor();
+  const [isUser] = useUser();
   // console.log('isAdmin', isAdmin);
   // console.log("isInstructor", isInstructor);
+   console.log("isUser", isUser);
 
 
   return (
@@ -29,12 +40,13 @@ const DashboardNavbar = () => {
               data-bs-target="#sidebar"
             ></span>
           </button>
-            <Link to={'/'}
-              className="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold"
-              href="#"
-            >
-              Shutter Safari
-            </Link>
+          <Link
+            to={"/"}
+            className="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold"
+            href="#"
+          >
+            Shutter Safari
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -104,12 +116,60 @@ const DashboardNavbar = () => {
         <div className="offcanvas-body p-0">
           <nav className="navbar-dark">
             <ul className="navbar-nav">
-              <li>
+              {/* <li>
                 <div className="text-white small fw-bold text-uppercase px-3">
                   {isAdmin? "Admin": isInstructor? "Instructor" : "User" }
                 </div>
-              </li>
-              <li>
+              </li> */}
+
+              {isUser && (
+                <>
+                  <li>
+                    <div className="text-white small fw-bold text-uppercase px-3">
+                      User
+                    </div>
+                  </li>
+
+                  <li>
+                    <Link
+                      to={"/dashboard/user-home"}
+                      href="#"
+                      className="nav-link px-3"
+                    >
+                      <span className="me-2">
+                        <FontAwesomeIcon icon={faHouse} />
+                      </span>
+                      <span>Home</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to={"/dashboard/user-myClass"}
+                      href="#"
+                      className="nav-link px-3"
+                    >
+                      <span className="me-2">
+                        <FontAwesomeIcon icon={faCalendarDays} />
+                      </span>
+                      <span>My Class</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to={"/dashboard/user-enrolled-class"}
+                      href="#"
+                      className="nav-link px-3"
+                    >
+                      <span className="me-2">
+                        <FontAwesomeIcon icon={faCartShopping} />
+                      </span>
+                      <span>My Enrolled Class</span>
+                    </Link>
+                  </li>
+                </>
+              )}
+
+              {/* <li>
                 <a href="#" className="nav-link px-3">
                   <span className="me-2">
                     <i className="bi bi-speedometer2"></i>
@@ -143,73 +203,45 @@ const DashboardNavbar = () => {
               </li>
               <li className="my-4">
                 <hr className="dropdown-divider bg-light" />
-              </li>
-              <li>
-                <div className="text-white small fw-bold text-uppercase px-3 mb-3">
-                  Interface
+              </li> */}
+
+              <li className="mt-5">
+                <div className="text-white small fw-bold text-uppercase px-3 mb-1">
+                  Main
                 </div>
               </li>
+
               <li>
-                <a
-                  className="nav-link px-3 sidebar-link"
-                  data-bs-toggle="collapse"
-                  href="#layouts"
-                >
+                <Link to={"/"} href="#" className="nav-link px-3">
                   <span className="me-2">
-                    <i className="bi bi-layout-split"></i>
+                    <FontAwesomeIcon icon={faHouse} />
                   </span>
-                  <span>Layouts</span>
-                  <span className="ms-auto">
-                    <span className="right-icon">
-                      <i className="bi bi-chevron-down"></i>
-                    </span>
-                  </span>
-                </a>
-                <div className="collapse" id="layouts">
-                  <ul className="navbar-nav ps-3">
-                    <li>
-                      <a href="#" className="nav-link px-3">
-                        <span className="me-2">
-                          <i className="bi bi-speedometer2"></i>
-                        </span>
-                        <span>Dashboard</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+                  <span>Home</span>
+                </Link>
               </li>
               <li>
-                <a href="#" className="nav-link px-3">
+                <Link to={"/instructors"} href="#" className="nav-link px-3">
                   <span className="me-2">
-                    <i className="bi bi-book-fill"></i>
+                    <FontAwesomeIcon icon={faPersonChalkboard} />
                   </span>
-                  <span>Pages</span>
-                </a>
+                  <span>Instructors</span>
+                </Link>
               </li>
+              <li>
+                <Link to={"/classes"} href="#" className="nav-link px-3">
+                  <span className="me-2">
+                    <FontAwesomeIcon icon={faChalkboardUser} />
+                  </span>
+                  <span>Classes</span>
+                </Link>
+              </li>
+
               <li className="my-4">
                 <hr className="dropdown-divider bg-light" />
               </li>
-              <li>
-                <div className="text-white small fw-bold text-uppercase px-3 mb-3">
-                  Addons
-                </div>
-              </li>
-              <li>
-                <a href="#" className="nav-link px-3">
-                  <span className="me-2">
-                    <i className="bi bi-graph-up"></i>
-                  </span>
-                  <span>Charts</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" className="nav-link px-3">
-                  <span className="me-2">
-                    <i className="bi bi-table"></i>
-                  </span>
-                  <span>Tables</span>
-                </a>
-              </li>
+              
+              
+              
             </ul>
           </nav>
         </div>

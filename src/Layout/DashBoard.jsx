@@ -3,9 +3,9 @@ import Dashboard from "../pages/Dashboard/Dashboard/Dashboard";
 
 const DashBoard = () => {
     return (
-        <div>
-            <Dashboard></Dashboard>
-        </div>
+      <div>
+        <Dashboard></Dashboard>
+      </div>
     );
 };
 

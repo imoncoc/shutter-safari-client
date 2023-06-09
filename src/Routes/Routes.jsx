@@ -9,6 +9,10 @@ import ErrorPage from "../pages/Shared/ErrorPage/ErrorPage";
 import DashBoard from "../Layout/DashBoard";
 import Testing from "../pages/Dashboard/Testing/Testing";
 import Mains from "../pages/Dashboard/Mains/main";
+import PrivateRoute from "./PrivateRoute";
+import UserHome from "../pages/Dashboard/Users/UserHome/UserHome";
+import UserMyClass from "../pages/Dashboard/Users/UserMyClass/UserMyClass";
+import UserEnrolledClass from "../pages/Dashboard/Users/UserEnrolledClass/UserEnrolledClass";
 
 const router = createBrowserRouter([
   {
@@ -32,8 +36,24 @@ const router = createBrowserRouter([
   },
   {
     path: "dashboard",
-    element: <DashBoard></DashBoard>,
+    element: (
+      <PrivateRoute>
+        <DashBoard></DashBoard>
+      </PrivateRoute>
+    ),
     children: [
+      {
+        path: "user-home",
+        element: <UserHome></UserHome>,
+      },
+      {
+        path: "user-myClass",
+        element: <UserMyClass></UserMyClass>,
+      },
+      {
+        path: "user-enrolled-class",
+        element: <UserEnrolledClass></UserEnrolledClass>,
+      },
       {
         path: "testing",
         element: <Testing></Testing>,
