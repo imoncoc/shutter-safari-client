@@ -1,6 +1,5 @@
 
 import { useContext } from 'react';
-import useAuth from '../../../hooks/useAuth';
 import DashboardNavbar from '../DashboardNavbar/DashboardNavbar';
 import './Dashboard.css'
 import { AuthContext } from '../../../providers/AuthProvider';

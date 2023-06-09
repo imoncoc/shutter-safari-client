@@ -13,6 +13,12 @@ import PrivateRoute from "./PrivateRoute";
 import UserHome from "../pages/Dashboard/Users/UserHome/UserHome";
 import UserMyClass from "../pages/Dashboard/Users/UserMyClass/UserMyClass";
 import UserEnrolledClass from "../pages/Dashboard/Users/UserEnrolledClass/UserEnrolledClass";
+import InstructorHome from "../pages/Dashboard/Instructors/InstructorHome/InstructorHome";
+import InstructorMyClasses from "../pages/Dashboard/Instructors/InstructorMyClasses/InstructorMyClasses";
+import InstructorAddAClass from "../pages/Dashboard/Instructors/InstructorAddAClass/InstructorAddAClass";
+import AdminHome from "../pages/Dashboard/Admins/AdminHome/AdminHome";
+import AdminManageClasses from "../pages/Dashboard/Admins/AdminManageClasses/AdminManageClasses";
+import AdminManageUsers from "../pages/Dashboard/Admins/AdminManageUsers/AdminManageUsers";
 
 const router = createBrowserRouter([
   {
@@ -55,12 +61,28 @@ const router = createBrowserRouter([
         element: <UserEnrolledClass></UserEnrolledClass>,
       },
       {
-        path: "testing",
-        element: <Testing></Testing>,
+        path: "instructor-home",
+        element: <InstructorHome></InstructorHome>,
       },
       {
-        path: "mains",
-        element: <Mains></Mains>,
+        path: "instructor-myClasses",
+        element: <InstructorMyClasses></InstructorMyClasses>,
+      },
+      {
+        path: "instructor-addAClass",
+        element: <InstructorAddAClass></InstructorAddAClass>,
+      },
+      {
+        path: "admin-home",
+        element: <AdminHome></AdminHome>,
+      },
+      {
+        path: "admin-manageClasses",
+        element: <AdminManageClasses></AdminManageClasses>,
+      },
+      {
+        path: "admin-manageUsers",
+        element: <AdminManageUsers></AdminManageUsers>,
       },
     ],
   },

@@ -8,6 +8,9 @@ import {
   faCartShopping,
   faPersonChalkboard,
   faChalkboardUser,
+  faCartPlus,
+  faUsers,
+  faListCheck,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import TestNav from "../TestNav/TestNav";
@@ -169,6 +172,100 @@ const DashboardNavbar = () => {
                 </>
               )}
 
+              {isInstructor && (
+                <>
+                  <li>
+                    <div className="text-white small fw-bold text-uppercase px-3">
+                      Instructor
+                    </div>
+                  </li>
+
+                  <li>
+                    <Link
+                      to={"/dashboard/instructor-home"}
+                      href="#"
+                      className="nav-link px-3"
+                    >
+                      <span className="me-2">
+                        <FontAwesomeIcon icon={faHouse} />
+                      </span>
+                      <span>Home</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to={"/dashboard/instructor-myClasses"}
+                      href="#"
+                      className="nav-link px-3"
+                    >
+                      <span className="me-2">
+                        <FontAwesomeIcon icon={faCalendarDays} />
+                      </span>
+                      <span>My Classes</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to={"/dashboard/instructor-addAClass"}
+                      href="#"
+                      className="nav-link px-3"
+                    >
+                      <span className="me-2">
+                        <FontAwesomeIcon icon={faCartPlus} />
+                      </span>
+                      <span>Add A Class</span>
+                    </Link>
+                  </li>
+                </>
+              )}
+
+              {isAdmin && (
+                <>
+                  <li>
+                    <div className="text-white small fw-bold text-uppercase px-3">
+                      Admin
+                    </div>
+                  </li>
+
+                  <li>
+                    <Link
+                      to={"/dashboard/admin-home"}
+                      href="#"
+                      className="nav-link px-3"
+                    >
+                      <span className="me-2">
+                        <FontAwesomeIcon icon={faHouse} />
+                      </span>
+                      <span>Home</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to={"/dashboard/admin-manageClasses"}
+                      href="#"
+                      className="nav-link px-3"
+                    >
+                      <span className="me-2">
+                        <FontAwesomeIcon icon={faListCheck} />
+                      </span>
+                      <span>Manage Classes</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to={"/dashboard/admin-manageUsers"}
+                      href="#"
+                      className="nav-link px-3"
+                    >
+                      <span className="me-2">
+                        <FontAwesomeIcon icon={faUsers} />
+                      </span>
+                      <span>Manage Users</span>
+                    </Link>
+                  </li>
+                </>
+              )}
+
               {/* <li>
                 <a href="#" className="nav-link px-3">
                   <span className="me-2">
@@ -239,9 +336,6 @@ const DashboardNavbar = () => {
               <li className="my-4">
                 <hr className="dropdown-divider bg-light" />
               </li>
-              
-              
-              
             </ul>
           </nav>
         </div>
