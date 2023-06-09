@@ -4,12 +4,15 @@ import { faMagnifyingGlass, faUser } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import TestNav from "../TestNav/TestNav";
 import useAdmin from "../../../hooks/useAdmin";
+import useInstructor from "../../../hooks/useInstructor";
 
 const DashboardNavbar = () => {
   const [isAdmin] = useAdmin();
-  console.log(isAdmin);
+  const [isInstructor] = useInstructor();
+  // console.log('isAdmin', isAdmin);
+  // console.log("isInstructor", isInstructor);
 
-  
+
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -26,12 +29,12 @@ const DashboardNavbar = () => {
               data-bs-target="#sidebar"
             ></span>
           </button>
-          <a
-            className="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold"
-            href="#"
-          >
-            Shutter Safari
-          </a>
+            <Link to={'/'}
+              className="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold"
+              href="#"
+            >
+              Shutter Safari
+            </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -103,7 +106,7 @@ const DashboardNavbar = () => {
             <ul className="navbar-nav">
               <li>
                 <div className="text-white small fw-bold text-uppercase px-3">
-                  CORE
+                  {isAdmin? "Admin": isInstructor? "Instructor" : "User" }
                 </div>
               </li>
               <li>
@@ -115,7 +118,11 @@ const DashboardNavbar = () => {
                 </a>
               </li>
               <li>
-                <Link to={"/dashboard/mains"} href="#" className="nav-link px-3">
+                <Link
+                  to={"/dashboard/mains"}
+                  href="#"
+                  className="nav-link px-3"
+                >
                   <span className="me-2">
                     <i className="bi bi-speedometer2"></i>
                   </span>
@@ -123,7 +130,11 @@ const DashboardNavbar = () => {
                 </Link>
               </li>
               <li>
-                <Link to={"/dashboard/testing"} href="#" className="nav-link px-3">
+                <Link
+                  to={"/dashboard/testing"}
+                  href="#"
+                  className="nav-link px-3"
+                >
                   <span className="me-2">
                     <i className="bi bi-speedometer2"></i>
                   </span>
@@ -205,7 +216,7 @@ const DashboardNavbar = () => {
       </div>
       {/* <!-- offcanvas --> */}
       <TestNav></TestNav>
-       </>
+    </>
   );
 };
 

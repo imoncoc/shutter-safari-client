@@ -30,7 +30,7 @@ const Navbar = () => {
       const newTheme = currentTheme === "light" ? "dark" : "light";
       bodyElement.setAttribute("data-bs-theme", newTheme);
       setTheme(!theme)
-      console.log('Clicked', theme)
+      // console.log('Clicked', theme)
     };
 
     const handleLogOut = () => {
