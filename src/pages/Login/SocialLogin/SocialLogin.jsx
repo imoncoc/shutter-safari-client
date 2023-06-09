@@ -24,7 +24,7 @@ const SocialLogin = () => {
           const saveUser = {
             name: loggedInUser?.displayName,
             email: loggedInUser?.email,
-            photoUrl: loggedInUser?.photoUrl
+            photoUrl: loggedInUser?.photoURL
           };
           fetch("http://localhost:5000/users", {
             method: "POST",
@@ -65,7 +65,7 @@ const SocialLogin = () => {
           const saveUser = {
             name: loggedInUser?.displayName,
             email: loggedInUser?.email,
-            photoUrl: loggedInUser?.photoUrl,
+            photoUrl: loggedInUser?.photoURL,
           };
           fetch("http://localhost:5000/users", {
             method: "POST",

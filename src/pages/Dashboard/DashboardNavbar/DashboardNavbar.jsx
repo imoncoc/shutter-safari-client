@@ -1,11 +1,15 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./DashboardNavbar.css";
 import { faMagnifyingGlass, faUser } from "@fortawesome/free-solid-svg-icons";
-import Main from "../Mains/main";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 import TestNav from "../TestNav/TestNav";
+import useAdmin from "../../../hooks/useAdmin";
 
 const DashboardNavbar = () => {
+  const [isAdmin] = useAdmin();
+  console.log(isAdmin);
+
+  
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -26,7 +30,7 @@ const DashboardNavbar = () => {
             className="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold"
             href="#"
           >
-            Frontendfunn
+            Shutter Safari
           </a>
           <button
             className="navbar-toggler"
@@ -175,7 +179,7 @@ const DashboardNavbar = () => {
                 <hr className="dropdown-divider bg-light" />
               </li>
               <li>
-                <div className="text-muted small fw-bold text-uppercase px-3 mb-3">
+                <div className="text-white small fw-bold text-uppercase px-3 mb-3">
                   Addons
                 </div>
               </li>
