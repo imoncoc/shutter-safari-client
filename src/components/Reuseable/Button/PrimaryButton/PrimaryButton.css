@@ -14,3 +14,10 @@
     background-color: var(--main-white);
     background-color: transparent;
 }
+
+.shutter-primary-button[disabled] {
+    color: var(--main-gray-500);
+    background-color: var(--main-gray-200);
+    border-color: var(--main-gray-200);
+    cursor: not-allowed;
+}

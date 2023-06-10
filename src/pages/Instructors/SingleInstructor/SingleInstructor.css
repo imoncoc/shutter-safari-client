@@ -5,6 +5,10 @@
     color: var(--mainGrey);
 }
 
+.card-img-top{
+    height: 15rem;
+}
+
 .customer-img {
     border: 0.4rem solid #fff;
     width: 6.4rem;
@@ -32,4 +36,8 @@
 
 .instructor-title {
     color: var(--main-lime-600);
+}
+
+.instructor-email-text{
+    font-size: 0.8rem;
 }

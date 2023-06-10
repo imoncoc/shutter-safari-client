@@ -31,17 +31,17 @@ const SingleInstructor = ({ instructor }) => {
           <p className="customer-quote text-center mx-auto text-muted">
             A comprehensive{" "}
             <span className="chef-title fw-semibold"> 3 month</span>{" "}
-            professional training program designed specifically for aspiring
-             photographers.
+            professional photography training program designed specifically for
+            summer camp.
           </p>
 
-          <div className="d-flex justify-content-center">
+          <div className="d-flex justify-content-between">
             <p className="me-4" title="Email">
               <FontAwesomeIcon
                 icon={faEnvelope}
                 className="me-2 instructor-icon"
               />
-              {insEmail}
+              <span className='instructor-email-text mb-2'>{insEmail}</span>
             </p>
             <p title="Classes">
               <FontAwesomeIcon

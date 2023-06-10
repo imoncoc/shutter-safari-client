@@ -1,11 +1,16 @@
 import './PrimaryButton.css'
 
-const PrimaryButton = ({name, width, icon}) => {
+const PrimaryButton = ({name, width, icon, disabled}) => {
 
     return (
-        <button className={`shutter-primary-button ${width}`} type='submit'>
-            {icon}{name}
-        </button>
+      <button
+        className={`shutter-primary-button ${width}`}
+        type="submit"
+        disabled={disabled}
+      >
+        {icon}
+        {name}
+      </button>
     );
 };
 
