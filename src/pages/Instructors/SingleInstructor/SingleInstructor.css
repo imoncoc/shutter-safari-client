@@ -1,0 +1,35 @@
+
+
+.customer-card-body {
+    margin-top: -4.5rem !important;
+    color: var(--mainGrey);
+}
+
+.customer-img {
+    border: 0.4rem solid #fff;
+    width: 6.4rem;
+    height: 7rem;
+}
+
+.customer-name {
+    /* color: var(--mainBlue); */
+    margin: 0.5rem;
+    font-size: 1.8rem;
+}
+
+.customer-icon {
+    font-size: 2rem;
+    /* color: var(--mainGrey); */
+}
+
+/* .customer-quote {
+    max-width: 90%;
+} */
+
+.instructor-icon {
+    color: var(--main-lime-600) !important;
+}
+
+.instructor-title {
+    color: var(--main-lime-600);
+}

@@ -51,3 +51,18 @@ body {
 .bg-lime-600{
   color: var(--main-lime-600);
 }
+
+.border-lime{
+  border: .3rem solid var(--main-lime-500) ;
+  margin: 0.5rem;
+}
+
+/* Lazy Loading Images Added */
+.LazyLoad {
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.is-visible {
+  opacity: 1;
+}

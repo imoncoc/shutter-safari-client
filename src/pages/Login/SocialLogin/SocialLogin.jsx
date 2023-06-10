@@ -24,9 +24,10 @@ const SocialLogin = () => {
           const saveUser = {
             name: loggedInUser?.displayName,
             email: loggedInUser?.email,
-            photoUrl: loggedInUser?.photoURL
+            photoUrl: loggedInUser?.photoURL,
+            role: "user"
           };
-          fetch("http://localhost:5000/users", {
+          fetch("https://shutter-safari.vercel.app/users", {
             method: "POST",
             headers: {
               "content-type": "application/json",
@@ -66,8 +67,9 @@ const SocialLogin = () => {
             name: loggedInUser?.displayName,
             email: loggedInUser?.email,
             photoUrl: loggedInUser?.photoURL,
+            role: "user"
           };
-          fetch("http://localhost:5000/users", {
+          fetch("https://shutter-safari.vercel.app/users", {
             method: "POST",
             headers: {
               "content-type": "application/json",
@@ -76,9 +78,12 @@ const SocialLogin = () => {
           })
             .then((res) => res.json())
             .then(() => {
-              toast.success(`Hello! ${result.user.displayName}! Welcome Back!`, {
-                position: toast.POSITION.TOP_CENTER,
-              });
+              toast.success(
+                `Hello! ${result.user.displayName}! Welcome Back!`,
+                {
+                  position: toast.POSITION.TOP_CENTER,
+                }
+              );
               navigate(from, { replace: true });
             })
             .catch((error) => {

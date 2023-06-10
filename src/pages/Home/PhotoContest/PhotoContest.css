@@ -1,0 +1,48 @@
+/* Composition Photo Project */
+.project-heading-link {
+    text-decoration: none;
+}
+
+.composition {
+    position: relative;
+}
+
+.composition__photo {
+    width: 70%;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+    /* border-radius: 2px; */
+    position: absolute;
+    z-index: 10;
+    transition: all 0.2s;
+    outline-offset: 1rem;
+    cursor: pointer;
+}
+
+.composition__photo--p1 {
+    left: 0;
+    top: -2rem;
+}
+
+.composition__photo--p2 {
+    right: 0;
+    top: 2rem;
+}
+
+.composition__photo--p3 {
+    left: 10%;
+    top: 7rem;
+}
+
+.composition__photo:hover {
+    /* outline: 0.5rem solid var(--color-primary-green); */
+    /* outline: 0.5rem solid #C7EAE4; */
+    /* outline: 0.5rem solid rgba(0, 0, 0, 0.5); */
+    outline: 0.5rem solid rgba(132, 204, 22, 0.5);
+    transform: scale(1.30) translateY(-0.5rem);
+    box-shadow: 0 2rem 3.5rem rgba(0, 0, 0, 0.5);
+    z-index: 20;
+}
+
+.composition:hover .composition__photo:not(:hover) {
+    transform: scale(0.95);
+}

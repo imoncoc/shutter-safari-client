@@ -7,8 +7,6 @@ import Instructors from "../pages/Instructors/Instructors/Instructors";
 import Classes from "../pages/Classes/Classes/Classes";
 import ErrorPage from "../pages/Shared/ErrorPage/ErrorPage";
 import DashBoard from "../Layout/DashBoard";
-import Testing from "../pages/Dashboard/Testing/Testing";
-import Mains from "../pages/Dashboard/Mains/main";
 import PrivateRoute from "./PrivateRoute";
 import UserHome from "../pages/Dashboard/Users/UserHome/UserHome";
 import UserMyClass from "../pages/Dashboard/Users/UserMyClass/UserMyClass";

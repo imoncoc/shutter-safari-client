@@ -57,27 +57,29 @@ const SignUp = () => {
                 name: name,
                 email: createdUser?.email,
                 photoUrl: photoURLs,
+                role: "user"
               };
-              fetch("http://localhost:5000/users", {
+              fetch("https://shutter-safari.vercel.app/users", {
                 method: "POST",
                 headers: {
                   "content-type": "application/json",
                 },
                 body: JSON.stringify(saveUser),
-              }).then((res) => res.json())
-              .then((data) => {
-                if(data.insertId){
-                  reset();
-                  Swal.fire({
-                    position: "top-end",
-                    icon: "success",
-                    title: "User created successfully.",
-                    showConfirmButton: false,
-                    timer: 1500,
-                  });
-                  navigate("/");
-                }
               })
+                .then((res) => res.json())
+                .then((data) => {
+                  if (data.insertId) {
+                    reset();
+                    Swal.fire({
+                      position: "top-end",
+                      icon: "success",
+                      title: "User created successfully.",
+                      showConfirmButton: false,
+                      timer: 1500,
+                    });
+                    navigate("/");
+                  }
+                });
             });
             Swal.fire(
               "Success!",

@@ -11,6 +11,7 @@ import {
   faCartPlus,
   faUsers,
   faListCheck,
+  faCameraRetro,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import TestNav from "../TestNav/TestNav";
@@ -48,7 +49,10 @@ const DashboardNavbar = () => {
             className="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold"
             href="#"
           >
-            Shutter Safari
+            <span className="me-2 text-lime-500">
+              <FontAwesomeIcon icon={faCameraRetro} />
+            </span>
+            <span className="text-lime-500">Shutter Safari</span>
           </Link>
           <button
             className="navbar-toggler"
