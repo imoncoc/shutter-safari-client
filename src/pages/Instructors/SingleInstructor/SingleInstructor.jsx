@@ -6,8 +6,15 @@ import { Link } from 'react-router-dom';
 import PrimaryButton from '../../../components/Reuseable/Button/PrimaryButton/PrimaryButton';
 
 const SingleInstructor = ({ instructor }) => {
-    console.log(instructor)
-    const { insImage, instructorName, name, insEmail, clsImage } = instructor;
+    // console.log(instructor)
+    const {
+      insImage,
+      instructorName,
+      name,
+      insEmail,
+      clsImage,
+      sameEmailCount
+    } = instructor;
   return (
     <div className="col-10 mx-auto my-5 col-md-6 col-lg-4">
       <div className="card shadow">
@@ -41,14 +48,14 @@ const SingleInstructor = ({ instructor }) => {
                 icon={faEnvelope}
                 className="me-2 instructor-icon"
               />
-              <span className='instructor-email-text mb-2'>{insEmail}</span>
+              <span className="instructor-email-text mb-2">{insEmail}</span>
             </p>
             <p title="Classes">
               <FontAwesomeIcon
                 icon={faChalkboardUser}
                 className="me-2 instructor-icon"
               />
-              2
+              {sameEmailCount}
             </p>
           </div>
 

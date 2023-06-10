@@ -6,11 +6,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faCartPlus, faCheck, faFileSignature } from '@fortawesome/free-solid-svg-icons';
 import LazyLoad from 'react-lazy-load';
 import useUser from '../../../hooks/useUser';
+import useAuth from '../../../hooks/useAuth';
+import { AuthContext } from '../../../providers/AuthProvider';
+import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { useContext } from 'react';
 
 
 const Class = ({classItem}) => {
   const [isUser] = useUser();
-
+  const {user} = useContext(AuthContext);
+  // console.log(Auth)
 
 
     const {
@@ -26,8 +32,21 @@ const Class = ({classItem}) => {
     const myStyles = {
       itemShapes: ThinStar,
       activeFillColor: "#84CC16",
-      inactiveFillColor: "hsl(229, 31%, 21%)",
+      // inactiveFillColor: "hsl(229, 31%, 21%)",
+      inactiveFillColor: "#C6F6D5",
     };
+
+    const handleAddToCart = (item) => {
+      console.log(item);
+    };
+
+
+
+    const handleRedirectToLogin = () => {
+      toast.warning("You have to login First to select any class", {
+        position: toast.POSITION.TOP_CENTER,
+      });
+    }
 
     return (
       <div className="col-10 col-md-6 col-lg-4 mx-auto my-5">
@@ -73,7 +92,19 @@ const Class = ({classItem}) => {
                 icon={<FontAwesomeIcon className="ms-2" icon={faArrowRight} />}
               ></SecondaryButton>
             </div> */}
-              <PrimaryButton width={"w-100"} name={"Select"} disabled={!isUser}></PrimaryButton>
+            {user ? (
+              <span onClick={() => handleAddToCart(classItem)}>
+                <PrimaryButton
+                  width={"w-100"}
+                  name={"Select"}
+                  disabled={!isUser || availableSeats === 0}
+                ></PrimaryButton>
+              </span>
+            ) : (
+              <Link to="/login" onClick={handleRedirectToLogin}>
+                <PrimaryButton width={"w-100"} name={"Select"}></PrimaryButton>
+              </Link>
+            )}
           </div>
         </div>
       </div>
