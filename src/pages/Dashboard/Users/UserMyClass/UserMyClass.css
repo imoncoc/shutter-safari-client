@@ -1,0 +1,12 @@
+.table-img {
+    width: 2.5rem;
+}
+
+.myClass-icon-payment{
+    background-color: var(--main-soft-blue);
+    color: white;
+}
+.myClass-icon-payment:hover {
+    background-color: var(hsl(231, 69%, 60%)) !important;
+    color: white;
+}

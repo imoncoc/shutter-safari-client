@@ -18,14 +18,24 @@ import TestNav from "../TestNav/TestNav";
 import useAdmin from "../../../hooks/useAdmin";
 import useInstructor from "../../../hooks/useInstructor";
 import useUser from "../../../hooks/useUser";
+import { useContext } from "react";
+import { AuthContext } from "../../../providers/AuthProvider";
+import ThirdButton from "../../../components/Reuseable/Button/ThirdButton/ThirdButton";
 
 const DashboardNavbar = () => {
   const [isAdmin] = useAdmin();
   const [isInstructor] = useInstructor();
   const [isUser] = useUser();
+  const { user, logOut } = useContext(AuthContext);
   // console.log('isAdmin', isAdmin);
   // console.log("isInstructor", isInstructor);
-   console.log("isUser", isUser);
+  //  console.log("isUser", isUser);
+
+   const handleLogOut = () => {
+     logOut()
+       .then(() => {})
+       .catch((error) => console.log(error));
+   };
 
 
   return (
@@ -94,18 +104,18 @@ const DashboardNavbar = () => {
                 <ul className="dropdown-menu dropdown-menu-end">
                   <li>
                     <a className="dropdown-item" href="#">
-                      Action
+                      {user?.displayName}
                     </a>
                   </li>
                   <li>
                     <a className="dropdown-item" href="#">
-                      Another action
+                      {user.email}
                     </a>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#">
-                      Something else here
-                    </a>
+                    <Link to="/" className="dropdown-item" onClick={handleLogOut}>
+                      <ThirdButton width="w-100" name="Logout"></ThirdButton>
+                    </Link>
                   </li>
                 </ul>
               </li>

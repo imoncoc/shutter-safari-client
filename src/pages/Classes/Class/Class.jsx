@@ -8,18 +8,24 @@ import LazyLoad from 'react-lazy-load';
 import useUser from '../../../hooks/useUser';
 import useAuth from '../../../hooks/useAuth';
 import { AuthContext } from '../../../providers/AuthProvider';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useContext } from 'react';
+import useCart from '../../../hooks/useCart';
+import Swal from 'sweetalert2';
 
 
 const Class = ({classItem}) => {
   const [isUser] = useUser();
   const {user} = useContext(AuthContext);
-  // console.log(Auth)
+  const [, refetch] = useCart(); 
+  const navigate = useNavigate();
+  const location = useLocation();
+
 
 
     const {
+      _id,
       availableSeats,
       clsImage,
       name,
@@ -27,6 +33,10 @@ const Class = ({classItem}) => {
       ratings,
       purchaseCourse,
       instructorName,
+      Learn,
+      includes,
+      insEmail,
+      title
     } = classItem;
 
     const myStyles = {
@@ -36,9 +46,68 @@ const Class = ({classItem}) => {
       inactiveFillColor: "#C6F6D5",
     };
 
-    const handleAddToCart = (item) => {
-      console.log(item);
+    const handleAddToCart = (classItem) => {
+      const cartItem = {
+        classId: _id,
+        availableSeats,
+        clsImage,
+        name,
+        price,
+        ratings,
+        purchaseCourse,
+        instructorName,
+        Learn,
+        includes,
+        insEmail,
+        title,
+        email: user.email
+      };
+      
+
+      if (user && user.email) {
+        fetch(`https://shutter-safari-imoncoc.vercel.app/carts`, {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(cartItem),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.insertedId) {
+              refetch();
+              toast.success("Successfully Added into Cart", {
+                position: toast.POSITION.TOP_CENTER,
+              });
+            } else {
+              toast.error("Failed to add to cart", {
+                position: toast.POSITION.TOP_CENTER,
+              });
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+            toast.error(`Failed to add to cart,`, {
+              position: toast.POSITION.TOP_CENTER,
+            });
+          });
+      } else {
+        Swal.fire({
+          title: "Please login to order the food",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Login now!",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            navigate("/login", { state: { from: location } });
+          }
+        });
+      }
     };
+
+
 
 
 

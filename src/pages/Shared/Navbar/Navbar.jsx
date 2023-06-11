@@ -103,16 +103,18 @@ const Navbar = () => {
                     Classes
                   </NavLink>
                 </li>
-                <li className="nav-item fw-semibold">
-                  <NavLink
-                    to="/dashboard"
-                    className={({ isActive }) =>
-                      isActive ? "nav-link active" : "nav-link default"
-                    }
-                  >
-                    DashBoard
-                  </NavLink>
-                </li>
+                {user && (
+                  <li className="nav-item fw-semibold">
+                    <NavLink
+                      to="/dashboard"
+                      className={({ isActive }) =>
+                        isActive ? "nav-link active" : "nav-link default"
+                      }
+                    >
+                      DashBoard
+                    </NavLink>
+                  </li>
+                )}
                 <li className="me-2">
                   {user ? (
                     <div>

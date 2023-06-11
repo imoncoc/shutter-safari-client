@@ -1,7 +1,7 @@
 import './ThirdButton.css';
 
-const ThirdButton = ({name}) => {
-    return <button className="shatter-third-button">{name}</button>;
+const ThirdButton = ({name, width, icon}) => {
+    return <button className={`shatter-third-button ${width}`}>{name}{icon} </button>;
 };
 
 export default ThirdButton;

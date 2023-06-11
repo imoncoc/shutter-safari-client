@@ -109,21 +109,19 @@ const SocialLogin = () => {
         <div className="row">
           <div className="col-10 mx-auto">
             <div className="d-flex justify-content-center">
-              <div className="mx-3 bg-icon bg-danger rounded-circle">
-                <FontAwesomeIcon
-                  style={{ cursor: "pointer" }}
-                  icon={faGoogle}
-                  onClick={handleGoogleSignIn}
-                  className="text-white"
-                />
+              <div
+                className="mx-3 bg-icon bg-danger rounded-circle"
+                onClick={handleGoogleSignIn}
+                style={{ cursor: "pointer" }}
+              >
+                <FontAwesomeIcon icon={faGoogle} className="text-white" />
               </div>
-              <div className="bg-icon bg-dark rounded-circle">
-                <FontAwesomeIcon
-                  style={{ cursor: "pointer" }}
-                  icon={faGithub}
-                  onClick={handleGithubSignIn}
-                  className="text-white"
-                />
+              <div
+                className="bg-icon bg-dark rounded-circle"
+                style={{ cursor: "pointer" }}
+                onClick={handleGithubSignIn}
+              >
+                <FontAwesomeIcon icon={faGithub} className="text-white" />
               </div>
             </div>
           </div>
