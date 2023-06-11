@@ -6,6 +6,7 @@ import SecondaryButton from '../../../../components/Reuseable/Button/SecondaryBu
 import ThirdButton from '../../../../components/Reuseable/Button/ThirdButton/ThirdButton';
 import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const UserMyClass = () => {
   const [cart, refetch] = useCart();
@@ -21,7 +22,7 @@ const UserMyClass = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/carts/${item._id}`, {
+        fetch(`https://shutter-safari.vercel.app/carts/${item._id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -43,7 +44,7 @@ const UserMyClass = () => {
         <Helmet>
           <title>Shutter Safari | My Class</title>
         </Helmet>
-        
+
         <main className="mt-2 pt-3">
           <div className="container-fluid">
             <div className="row">
@@ -93,11 +94,13 @@ const UserMyClass = () => {
                               icon={faMoneyBill}
                             />
                           </button> */}
-                            <span title="pay">
-                              <SecondaryButton
-                                icon={<FontAwesomeIcon icon={faMoneyBill} />}
-                              ></SecondaryButton>
-                            </span>
+                            <Link to={`/dashboard/user-payment/${cartItem._id}`}>
+                              <span title="pay">
+                                <SecondaryButton
+                                  icon={<FontAwesomeIcon icon={faMoneyBill} />}
+                                ></SecondaryButton>
+                              </span>
+                            </Link>
                           </td>
                           <td className="text-center">
                             <span

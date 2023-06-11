@@ -1,12 +1,10 @@
 import { Rating, ThinStar } from '@smastrom/react-rating';
 import PrimaryButton from '../../../components/Reuseable/Button/PrimaryButton/PrimaryButton';
 import './Class.css';
-import SecondaryButton from '../../../components/Reuseable/Button/SecondaryButton/SecondaryButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faCartPlus, faCheck, faFileSignature } from '@fortawesome/free-solid-svg-icons';
+import {  faCartPlus, faCheck, faFileSignature } from '@fortawesome/free-solid-svg-icons';
 import LazyLoad from 'react-lazy-load';
 import useUser from '../../../hooks/useUser';
-import useAuth from '../../../hooks/useAuth';
 import { AuthContext } from '../../../providers/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
