@@ -1,9 +1,11 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
+import './UserCheckoutForm.css'
 
 import { useEffect, useState } from "react";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 import useAuth from "../../../../hooks/useAuth";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 
 const UserCheckoutForm = ({ cartItem, price }) => {
@@ -16,12 +18,15 @@ const UserCheckoutForm = ({ cartItem, price }) => {
   const [processing, setProcessing] = useState(false);
   const [transactionId, setTransactionId] = useState('');
 
+  const navigate = useNavigate();
+
   useEffect(() => {
-    axiosSecure.post(`/create-payment-intent`, {price})
-    .then((res)=> {
+    if(price > 0){
+      axiosSecure.post(`/create-payment-intent`, { price }).then((res) => {
         console.log(res.data.clientSecret);
         setClientSecret(res.data.clientSecret);
-    })
+      });
+    }
   }, [price, axiosSecure])
 
   const handleSubmit = async (event) => {
@@ -69,21 +74,26 @@ const UserCheckoutForm = ({ cartItem, price }) => {
         setTransactionId(paymentIntent.id);
         // Save payment information to the server
         const payment = {
-            email: user?.email,
-            transactionId,
-            price,
-            quantity: cartItem.length,
-            items: cartItem._id,
-            itemNames: cartItem.name
-        }
+          email: user?.email,
+          transactionId: paymentIntent.id,
+          price,
+          date: new Date(),
+          quantity: cartItem.length,
+          cartItems: cartItem._id,
+          menuItems: cartItem.classId,
+          status: "Service Pending",
+          itemNames: cartItem.name,
+          clsImage: cartItem.clsImage
+        };
         axiosSecure.post('/payments', payment)
         .then((res) => {
             console.log(res.data)
-            if(res.data.insertedId){
-                // Display Confirm
-                 toast.success("Successfully enrolled the class", {
-                   position: toast.POSITION.TOP_CENTER,
-                 });
+            if (res.data.insertResult.insertedId) {
+              // Display Confirm
+              toast.success("Successfully enrolled the class", {
+                position: toast.POSITION.TOP_CENTER,
+              });
+              navigate("/dashboard/user-home");
             }
         })
     }
@@ -118,7 +128,7 @@ const UserCheckoutForm = ({ cartItem, price }) => {
                 <button
                   type="submit"
                   disabled={!stripe || !clientSecret || processing}
-                  className="btn btn-success"
+                  className="btn btn-success my-3"
                 >
                   Pay
                 </button>

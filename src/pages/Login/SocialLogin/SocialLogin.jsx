@@ -27,7 +27,7 @@ const SocialLogin = () => {
             photoUrl: loggedInUser?.photoURL,
             role: "user"
           };
-          fetch("https://shutter-safari.vercel.app/users", {
+          fetch("http://localhost:5000/users", {
             method: "POST",
             headers: {
               "content-type": "application/json",
@@ -69,7 +69,7 @@ const SocialLogin = () => {
             photoUrl: loggedInUser?.photoURL,
             role: "user"
           };
-          fetch("https://shutter-safari.vercel.app/users", {
+          fetch("http://localhost:5000/users", {
             method: "POST",
             headers: {
               "content-type": "application/json",

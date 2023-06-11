@@ -8,7 +8,7 @@ const Instructors = () => {
   const [instructors, setInstructors] = useState([]);
 
   useEffect(() => {
-    fetch("https://shutter-safari.vercel.app/classes")
+    fetch("http://localhost:5000/classes")
       .then((res) => res.json())
       .then((data) => setInstructors(data))
       .catch((error) => console.log(error));

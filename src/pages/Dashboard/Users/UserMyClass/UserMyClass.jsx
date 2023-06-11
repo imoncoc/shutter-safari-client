@@ -22,7 +22,7 @@ const UserMyClass = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://shutter-safari.vercel.app/carts/${item._id}`, {
+        fetch(`http://localhost:5000/carts/${item._id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -49,7 +49,7 @@ const UserMyClass = () => {
           <div className="container-fluid">
             <div className="row">
               <div className="col-12">
-                <table className="table table-hover table-secondary table-responsive">
+                {!cart || cart.length === 0 ? <h2>No Selected Classes</h2> : <table className="table table-hover table-secondary table-responsive">
                   <thead className="table-dark">
                     <tr>
                       <th className="ps-3" scope="col">
@@ -116,6 +116,7 @@ const UserMyClass = () => {
                       ))}
                   </tbody>
                 </table>
+                }
               </div>
             </div>
           </div>

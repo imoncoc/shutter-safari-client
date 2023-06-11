@@ -4,7 +4,7 @@ const PrimaryButton = ({name, width, icon, disabled}) => {
 
     return (
       <button
-        className={`shutter-primary-button ${width}`}
+        className={`shutter-primary-button ${width? width: ""}`}
         type="submit"
         disabled={disabled}
       >

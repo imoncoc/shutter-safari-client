@@ -7,11 +7,16 @@ import { faCameraRetro, faMoon, faSun } from "@fortawesome/free-solid-svg-icons"
 import ThirdButton from "../../../components/Reuseable/Button/ThirdButton/ThirdButton";
 import PrimaryButton from "../../../components/Reuseable/Button/PrimaryButton/PrimaryButton";
 import { Helmet } from "react-helmet-async";
+import useCart from "../../../hooks/useCart";
+import useUser from "../../../hooks/useUser";
 
 
 const Navbar = () => {
   const [theme, setTheme] = useState(false);
     const { user, logOut } = useContext(AuthContext);
+    const [cart] = useCart();
+    const [isUser] = useUser();
+
 
     useEffect(() => {
       // Attach the event listener on window load
@@ -104,7 +109,7 @@ const Navbar = () => {
                   </NavLink>
                 </li>
                 {user && (
-                  <li className="nav-item fw-semibold">
+                  <li className="nav-item fw-semibold position-relative me-4">
                     <NavLink
                       to="/dashboard"
                       className={({ isActive }) =>
@@ -112,6 +117,11 @@ const Navbar = () => {
                       }
                     >
                       DashBoard
+                      { isUser &&
+                        <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
+                          {cart.length}
+                        </span>
+                      }
                     </NavLink>
                   </li>
                 )}
