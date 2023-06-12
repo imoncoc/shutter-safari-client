@@ -67,7 +67,7 @@ const UserCheckoutForm = ({ cartItem, price }) => {
     if(confirmError){
         console.log(confirmError)
     }
-    console.log(paymentIntent);
+    // console.log(paymentIntent);
     setProcessing(false)
 
     if(paymentIntent.status === 'succeeded'){
@@ -87,7 +87,7 @@ const UserCheckoutForm = ({ cartItem, price }) => {
         };
         axiosSecure.post('/payments', payment)
         .then((res) => {
-            console.log(res.data)
+            // console.log(res.data)
             if (res.data.insertResult.insertedId) {
               // Display Confirm
               toast.success("Successfully enrolled the class", {

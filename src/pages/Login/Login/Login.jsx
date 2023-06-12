@@ -17,7 +17,7 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { signIn, resetPassword, setLoading } = useContext(AuthContext);
   const emailRef = useRef();
-  console.log(emailRef)
+  // console.log(emailRef)
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -38,7 +38,7 @@ const Login = () => {
     signIn(email, password)
       .then((result) => {
         const loggedUser = result.user;
-        console.log(loggedUser);
+        // console.log(loggedUser);
         Swal.fire("Success!", "Successfully Login into account!", "success");
         reset();
         navigate(from, { replace: true });

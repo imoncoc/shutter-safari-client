@@ -7,7 +7,7 @@ import { Helmet } from 'react-helmet-async';
 
 const Dashboard = () => {
   const {user} = useContext(AuthContext);
-  console.log(user)
+  // console.log(user)
 
     return (
       <>
