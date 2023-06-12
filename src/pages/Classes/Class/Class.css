@@ -52,3 +52,18 @@
     background: var(--main-soft-red);
     color: #ffffff;
 }
+
+
+@media only screen and (max-width: 1190px) {
+
+    .class-card {
+        width: 20rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+
+    .class-card {
+        width: 18rem;
+    }
+}

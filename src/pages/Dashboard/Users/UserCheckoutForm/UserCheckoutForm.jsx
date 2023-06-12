@@ -23,7 +23,7 @@ const UserCheckoutForm = ({ cartItem, price }) => {
   useEffect(() => {
     if(price > 0){
       axiosSecure.post(`/create-payment-intent`, { price }).then((res) => {
-        console.log(res.data.clientSecret);
+        // console.log(res.data.clientSecret);
         setClientSecret(res.data.clientSecret);
       });
     }
@@ -93,6 +93,31 @@ const UserCheckoutForm = ({ cartItem, price }) => {
               toast.success("Successfully enrolled the class", {
                 position: toast.POSITION.TOP_CENTER,
               });
+              // console.log(cartItem)
+
+              const userItem = {
+                purchaseCourse: cartItem.purchaseCourse + 1,
+                availableSeats: cartItem.availableSeats - 1,
+              };
+
+              fetch(
+                `https://shutter-safari-imoncoc.vercel.app/class-after-payment/${cartItem.classId}`,
+                {
+                  method: "PUT",
+                  headers: {
+                    "content-type": "application/json",
+                  },
+                  body: JSON.stringify(userItem),
+                }
+              )
+                .then((res) => res.json())
+                .then((data) => {
+                  if (data.modifiedCount > 0 || data.acknowledged === true) {
+                    toast.success("Purchased class is one more student", {
+                      position: toast.POSITION.TOP_CENTER,
+                    });
+                  }
+                });
               navigate("/dashboard/user-home");
             }
         })

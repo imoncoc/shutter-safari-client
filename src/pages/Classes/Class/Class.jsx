@@ -84,8 +84,8 @@ const Class = ({classItem}) => {
             }
           })
           .catch((error) => {
-            // console.log(error);
-            toast.error(`Failed to add to cart, ${error.message}`, {
+            console.log(error);
+            toast.error(`Already Added into Cart`, {
               position: toast.POSITION.TOP_CENTER,
             });
           });

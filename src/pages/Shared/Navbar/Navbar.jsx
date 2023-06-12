@@ -109,7 +109,7 @@ const Navbar = () => {
                   </NavLink>
                 </li>
                 {user && (
-                  <li className="nav-item fw-semibold position-relative me-4">
+                  <li className="nav-item fw-semibold position-relative me-4 margin-t">
                     <NavLink
                       to="/dashboard"
                       className={({ isActive }) =>
@@ -117,20 +117,20 @@ const Navbar = () => {
                       }
                     >
                       DashBoard
-                      { isUser &&
+                      {isUser && (
                         <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
                           {cart.length}
                         </span>
-                      }
+                      )}
                     </NavLink>
                   </li>
                 )}
-                <li className="me-2">
+                <li className="me-2 margin-t">
                   {user ? (
-                    <div>
+                    <div className="">
                       <img
                         title={user?.displayName}
-                        className="img-fluid user-img me-2"
+                        className="img-fluid user-img me-2 mb-2 mb-sm-0"
                         src={user.photoURL}
                         alt=""
                       />
@@ -201,7 +201,7 @@ const Navbar = () => {
                   </Link>
                 )} */}
                 </li>
-                <li className="my-1">
+                <li className="my-1 mt-3 mt-sm-0">
                   <div onClick={handleToggle}>
                     {theme ? (
                       <span className="toggle-icon">
