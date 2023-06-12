@@ -11,32 +11,55 @@ Shutter Safari is a photography website dedicated to showcasing the beauty of th
 
 3. **Navbar and Footer:** The navbar is present on all pages, displaying the website logo/name, and links to Home, Photographers, Galleries, Dashboard, and the user's profile picture (conditionally). The footer includes the website logo/name, copyright, contact information, and address, creating a cohesive and professional appearance.
 
-4. **Photographers Page:** This page showcases talented photographers and their portfolios. Each photographer's profile includes their image, name, and optionally, the number of galleries they have contributed to. Users can explore the work of different photographers and gain inspiration from their unique styles.
+4. **Popular Class:** This page showcases talented photographers and their portfolios. Each photographer's profile includes their image, name, and optionally, the number of classes they have contributed to. Users can explore the work of different photographers and gain inspiration from their unique styles.
 
-5. **Galleries Page:** The galleries page presents a collection of curated photo galleries, organized by theme, location, or photographer. Each gallery features a captivating image that represents the theme, along with a brief description. Users can click on a gallery to explore a larger selection of images within that theme.
+5. **Popular Instructor:** This page showcases talented Instructor and their portfolios. Each photographer's profile includes their image, name, and optionally, the number of classes they have contributed to. Users can explore the work of different photographers and gain inspiration from their unique styles.
 
-6. **Image Display:** When viewing a gallery or photographer's portfolio, the website ensures proper alignment and spacing of the images. Each image is presented in a visually pleasing manner, allowing viewers to appreciate the details and compositions.
+6. **Class Pages:** This page showcases all classes. Each photographer's profile includes their image, name, and optionally, the number of classes they have contributed to. Users can explore the work of different photographers and gain inspiration from their unique styles.
 
-7. **Light and Dark Theme Toggle:** The website implements a theme toggle feature, allowing users to switch between light and dark themes on the homepage. This enhances user experience by providing options to accommodate individual preferences and optimize viewing conditions.
+7. **Instructor Pages:** This page showcases talented Instructor and their portfolios. Each photographer's profile includes their image, name, and optionally, the number of classes they have contributed to. Users can explore the work of different photographers and gain inspiration from their unique styles.
 
-8. **Responsive Design:** The website is designed to be responsive, ensuring optimal user experience across different devices and screen sizes. The layout and components adapt to different resolutions, providing seamless navigation and readability on desktops, tablets, and mobile devices.
+8. **Light and Dark Theme Toggle:** The website implements a theme toggle feature, allowing users to switch between light and dark themes on the homepage. This enhances user experience by providing options to accommodate individual preferences and optimize viewing conditions.
 
-9. **Animation and Icons:** The website incorporates animation effects and relevant icons to enhance the visual appeal and user engagement. Animation libraries such as Framer Motion, React Awesome Reveal, React Spring, or React Anime are utilized to bring subtle motion and interactivity to the user interface.
+9. **Responsive Design:** The website is designed to be responsive, ensuring optimal user experience across different devices and screen sizes. The layout and components adapt to different resolutions, providing seamless navigation and readability on desktops, tablets, and mobile devices.
 
-10. **React Query and Axios:** Tanstack Query (React Query) is implemented in at least two places, providing efficient data fetching and state management. Axios is used for making API calls in various functionalities, ensuring seamless communication between the frontend and backend.
+10. **Animation and Icons:** The website incorporates animation effects and relevant icons to enhance the visual appeal and user engagement. Animation libraries such as Framer Motion, React Awesome Reveal, React Spring, or React Anime are utilized to bring subtle motion and interactivity to the user interface.
 
-11. **React Hook Form:** The registration and login page utilize React Hook Form for form validation and handling user input, ensuring a smooth and user-friendly experience.
+11. **React Query and Axios:** Tanstack Query (React Query) is implemented in at least two places or more, providing efficient data fetching and state management. Axios is used for making API calls in various functionalities, ensuring seamless communication between the frontend and backend.
 
-12. **JWT Token Authentication:** The login and registration systems incorporate JWT token authentication. Users receive a token upon successful login or registration, which is sent with subsequent requests to the dashboard routes for verification and authorization.
+12. **React Hook Form:** The registration and login page utilize React Hook Form for form validation and handling user input, ensuring a smooth and user-friendly experience.
 
-13. **404 Page:** A custom 404 page is created with an interesting image or animation, accompanied by a "Back to Home" button. The page provides a visually appealing and user-friendly way to handle missing or inaccessible content.
+13. **JWT Token Authentication:** The login and registration systems incorporate JWT token authentication. Users receive a token upon successful login or registration, which is sent with subsequent requests to the dashboard routes for verification and authorization.
+
+14. **404 Page:** A custom 404 page is created with an interesting image or animation, accompanied by a "Back to Home" button. The page provides a visually appealing and user-friendly way to handle missing or inaccessible content.
+
+15. **Student Dashboard:** Private and accessible only to students.
+My Selected Classes: Displays all classes booked by the student. Includes relevant class information and options to delete or pay.
+
+My Enrolled Classes: Shows classes the student selected and successfully paid for.
+
+16. **Instructor Dashboard:** Private and accessible only to instructors.
+
+Add a Class: Form with fields for class name, class image, instructor name (read-only), instructor email (read-only), available seats, and price. Clicking "Add" creates a pending class in the database.
+
+My Classes: Displays classes added by the instructor. Shows relevant information like status (pending/approved/denied), total enrolled students, and feedback. Includes an update button.
+
+Total Enrolled Students: Initially zero. Updates with the number of students who successfully booked the class.
+
+Feedback: No feedback for pending or approved classes. If a class is denied, admin can provide feedback explaining the reason.
+
+17. **Admin Dashboard::** Private and accessible only to admins.
+
+Manage Classes: Displays all classes added by instructors. Shows class information, including image, name, instructor details, available seats, price, and status (pending/approved/denied). Includes buttons to approve, deny, and send feedback.
+
+Manage Users: Shows relevant information of registered users. Includes buttons to make users instructors or admins.
 
 ## Technology Used:
 
 - React.js for frontend development
 - Node.js and Express.js for backend development
 - MongoDB for database storage
-- CSS or CSS frameworks (e.g., Bootstrap, Tailwind CSS) for styling
+- CSS or CSS frameworks (Bootstrap) for styling
 - Git for version control
 
 ## Packages and Libraries:
