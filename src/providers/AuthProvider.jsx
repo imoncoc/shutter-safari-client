@@ -69,7 +69,7 @@ const AuthProvider = ({ children }) => {
       // Get and set token
       if (currentUser) {
         axios
-          .post(`http://localhost:5000/jwt`, {
+          .post(`https://shutter-safari-imoncoc.vercel.app/jwt`, {
             email: currentUser.email,
           })
           .then((data) => {

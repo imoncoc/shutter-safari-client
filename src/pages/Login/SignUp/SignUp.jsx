@@ -30,7 +30,7 @@ const SignUp = () => {
 
   const onSubmit = (data) => {
     const { email, password, name } = data;
-    console.log(data);
+    // console.log(data);
     
     
     const image = data.photoUrl[0];
@@ -51,7 +51,7 @@ const SignUp = () => {
         createUser(email, password)
           .then((result) => {
             const createdUser = result.user;
-            console.log(createdUser);
+            // console.log(createdUser);
             updateUserProfile(name, photoURLs).then(() => {
               const saveUser = {
                 name: name,
@@ -59,7 +59,7 @@ const SignUp = () => {
                 photoUrl: photoURLs,
                 role: "user"
               };
-              fetch("http://localhost:5000/users", {
+              fetch("https://shutter-safari-imoncoc.vercel.app/users", {
                 method: "POST",
                 headers: {
                   "content-type": "application/json",

@@ -13,7 +13,7 @@ const AdminManageUsers = () => {
   useEffect(() => {
     axiosSecure("/users").then((res) => {
       setAllUsers(res.data);
-      console.log(res.data);
+      // console.log(res.data);
     });
   }, [dataChanged, axiosSecure]);
 
@@ -26,7 +26,7 @@ const AdminManageUsers = () => {
       role: "admin",
     };
 
-    fetch(`http://localhost:5000/user/${id}`, {
+    fetch(`https://shutter-safari-imoncoc.vercel.app/user/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -52,7 +52,7 @@ const AdminManageUsers = () => {
       role: "user",
     };
 
-    fetch(`http://localhost:5000/user/${id}`, {
+    fetch(`https://shutter-safari-imoncoc.vercel.app/user/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -78,7 +78,7 @@ const AdminManageUsers = () => {
       role: "instructor"
     };
    
-    fetch(`http://localhost:5000/user/${id}`, {
+    fetch(`https://shutter-safari-imoncoc.vercel.app/user/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

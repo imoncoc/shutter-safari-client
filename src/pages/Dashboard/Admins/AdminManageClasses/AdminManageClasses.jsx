@@ -10,10 +10,10 @@ const AdminManageClasses = () => {
 
 
   useEffect(() => {
-    fetch("http://localhost:5000/classes")
+    fetch("https://shutter-safari-imoncoc.vercel.app/classes")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setClasses(data);
       })
       .catch((error) => console.log(error));
@@ -27,7 +27,7 @@ const AdminManageClasses = () => {
       feedback: ""
     };
 
-    fetch(`http://localhost:5000/class/${id}`, {
+    fetch(`https://shutter-safari-imoncoc.vercel.app/class/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -52,7 +52,7 @@ const AdminManageClasses = () => {
       feedback: "",
     };
 
-    fetch(`http://localhost:5000/class/${id}`, {
+    fetch(`https://shutter-safari-imoncoc.vercel.app/class/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -91,7 +91,7 @@ const userItem = {
   status: cartItem.status
 };
 
-fetch(`http://localhost:5000/class/${cartItem._id}`, {
+fetch(`https://shutter-safari-imoncoc.vercel.app/class/${cartItem._id}`, {
   method: "PUT",
   headers: {
     "content-type": "application/json",

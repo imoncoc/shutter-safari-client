@@ -8,7 +8,7 @@ const Classes = () => {
     const [classes, setClasses] = useState([]);
 
     useEffect(()=> {
-        fetch("http://localhost:5000/classes")
+        fetch("https://shutter-safari-imoncoc.vercel.app/classes")
           .then((res) => res.json())
           .then((data) => setClasses(data))
           .catch((error) => console.log(error));

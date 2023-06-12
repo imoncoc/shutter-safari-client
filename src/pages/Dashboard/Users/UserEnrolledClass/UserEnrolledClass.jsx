@@ -2,22 +2,29 @@ import { useEffect, useState } from 'react';
 import './UserEnrolledClass.css';
 import useAxiosSecure from '../../../../hooks/useAxiosSecure';
 import { Helmet } from 'react-helmet-async';
+import useAuth from '../../../../hooks/useAuth';
 
 const UserEnrolledClass = () => {
   const [payments, setPayments] = useState([]);
-  const [axiosSecure] = useAxiosSecure(); 
+  const [axiosSecure] = useAxiosSecure();
+  const {user} = useAuth();
+  
+  const newPayments = payments?.filter((item) => item.email === user.email)
+  // console.log('newPayments', newPayments);
 
-  const formattedDateTime = new Date(payments?.date).toLocaleString("en-US", {
-    dateStyle: "long",
-    timeStyle: "medium",
-  });
-  console.log(formattedDateTime)
+   
+
+  // const formattedDateTime = new Date(payments?.date).toLocaleString("en-US", {
+  //   dateStyle: "long",
+  //   timeStyle: "medium",
+  // });
+  // console.log(formattedDateTime)
 
   useEffect(()=> {
     axiosSecure('/payments')
     .then((res) => {
       setPayments(res.data)
-      console.log(res.data)
+      // console.log(res.data)
     })
   },[axiosSecure])
 
@@ -34,7 +41,7 @@ const UserEnrolledClass = () => {
           <div className="container-fluid">
             <div className="row">
               <div className="col-12">
-                {!payments || payments.length === 0 ? (
+                {!newPayments || newPayments.length === 0 ? (
                   <h2>No Items to Show.</h2>
                 ) : (
                   <table className="table table-hover table-secondary table-responsive">
@@ -59,8 +66,8 @@ const UserEnrolledClass = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      {payments &&
-                        payments.map((cartItem, indx) => (
+                      {newPayments &&
+                        newPayments.map((cartItem, indx) => (
                           <tr key={cartItem._id}>
                             <th scope="row" className="ps-3">
                               {indx + 1}.
@@ -93,7 +100,7 @@ const UserEnrolledClass = () => {
                         ))}
                     </tbody>
                   </table>
-                ) }
+                )}
               </div>
             </div>
           </div>

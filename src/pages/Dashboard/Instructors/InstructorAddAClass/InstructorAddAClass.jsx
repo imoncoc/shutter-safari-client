@@ -50,7 +50,7 @@ const InstructorAddAClass = () => {
       ],
     };
     
-    fetch(`http://localhost:5000/classes`, {
+    fetch(`https://shutter-safari-imoncoc.vercel.app/classes`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
