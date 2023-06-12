@@ -113,9 +113,10 @@ const UserCheckoutForm = ({ cartItem, price }) => {
                 .then((res) => res.json())
                 .then((data) => {
                   if (data.modifiedCount > 0 || data.acknowledged === true) {
-                    toast.success("Purchased class is one more student", {
-                      position: toast.POSITION.TOP_CENTER,
-                    });
+                    // toast.success("Purchased class is one more student", {
+                    //   position: toast.POSITION.TOP_CENTER,
+                    // });
+                    console.log(data)
                   }
                 });
               navigate("/dashboard/user-home");

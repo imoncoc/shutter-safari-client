@@ -49,74 +49,85 @@ const UserMyClass = () => {
           <div className="container-fluid">
             <div className="row">
               <div className="col-12">
-                {!cart || cart.length === 0 ? <h2>No Selected Classes</h2> : <table className="table table-hover table-secondary table-responsive">
-                  <thead className="table-dark">
-                    <tr>
-                      <th className="ps-3" scope="col">
-                        No.
-                      </th>
-                      <th scope="col">Photo</th>
-                      <th className="text-center" scope="col">
-                        Class Name
-                      </th>
-                      <th className="text-end" scope="col">
-                        Price
-                      </th>
-                      <th className="text-center" scope="col">
-                        Payment
-                      </th>
-                      <th className="text-center" scope="col">
-                        Delete
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {cart &&
-                      cart.map((cartItem, indx) => (
-                        <tr key={cartItem._id}>
-                          <th scope="row" className="ps-3">
-                            {indx + 1}.
-                          </th>
-                          <td>
-                            <img
-                              className="img-fluid table-img"
-                              src={cartItem.clsImage}
-                              alt=""
-                            />
-                          </td>
-                          <td className="text-center">{cartItem.name}</td>
-                          <td className="text-end">${cartItem.price}</td>
-                          <td className="text-center">
-                            {/* <button className="btn myClass-icon-payment rounded-4">
+                {!cart || cart.length === 0 ? (
+                  <h2>No Selected Classes</h2>
+                ) : (
+                  <table className="table table-hover table-secondary table-responsive">
+                    <thead className="table-dark">
+                      <tr>
+                        <th className="ps-3" scope="col">
+                          No.
+                        </th>
+                        <th scope="col">Photo</th>
+                        <th className="text-center" scope="col">
+                          Class Name
+                        </th>
+                        <th className="text-center" scope="col">
+                          Instructor Email
+                        </th>
+                        <th className="text-end" scope="col">
+                          Price
+                        </th>
+                        <th className="text-center" scope="col">
+                          Payment
+                        </th>
+                        <th className="text-center" scope="col">
+                          Delete
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {cart &&
+                        cart.map((cartItem, indx) => (
+                          <tr key={cartItem._id}>
+                            <th scope="row" className="ps-3">
+                              {indx + 1}.
+                            </th>
+                            <td>
+                              <img
+                                className="img-fluid table-img"
+                                src={cartItem.clsImage}
+                                alt=""
+                              />
+                            </td>
+                            <td className="text-center">{cartItem.name}</td>
+                            <td className="text-center">{cartItem.insEmail}</td>
+                            <td className="text-end">${cartItem.price}</td>
+                            <td className="text-center">
+                              {/* <button className="btn myClass-icon-payment rounded-4">
                             <FontAwesomeIcon
                             title='pay'
                               className="myClass-icon-payment"
                               icon={faMoneyBill}
                             />
                           </button> */}
-                            <Link to={`/dashboard/user-payment/${cartItem._id}`}>
-                              <span title="pay">
-                                <SecondaryButton
-                                  icon={<FontAwesomeIcon icon={faMoneyBill} />}
-                                ></SecondaryButton>
+                              <Link
+                                to={`/dashboard/user-payment/${cartItem._id}`}
+                              >
+                                <span title="pay">
+                                  <SecondaryButton
+                                    icon={
+                                      <FontAwesomeIcon icon={faMoneyBill} />
+                                    }
+                                  ></SecondaryButton>
+                                </span>
+                              </Link>
+                            </td>
+                            <td className="text-center">
+                              <span
+                                title="Delete"
+                                onClick={() => handleDelete(cartItem)}
+                              >
+                                <ThirdButton
+                                  icon={<FontAwesomeIcon icon={faTrash} />}
+                                ></ThirdButton>
                               </span>
-                            </Link>
-                          </td>
-                          <td className="text-center">
-                            <span
-                              title="Delete"
-                              onClick={() => handleDelete(cartItem)}
-                            >
-                              <ThirdButton
-                                icon={<FontAwesomeIcon icon={faTrash} />}
-                              ></ThirdButton>
-                            </span>
-                          </td>
-                        </tr>
-                      ))}
-                  </tbody>
-                </table>
-                }
+                            </td>
+                          </tr>
+                        ))}
+                    </tbody>
+                  </table>
+                )}
               </div>
             </div>
           </div>

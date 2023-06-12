@@ -94,16 +94,16 @@ const InstructorMyClasses = () => {
                                 </span>
                               </Link>
                             </td>
-                            <td className="text-center">2</td>
+                            <td className="text-center">
+                              {cartItem.purchaseCourse}
+                            </td>
                             <td className="text-center">{cartItem.status}</td>
                             {cartItem.feedback ? (
                               <td className="text-center">
                                 {cartItem.feedback}
                               </td>
                             ) : (
-                              <td className="text-center">
-                                
-                              </td>
+                              <td className="text-center"></td>
                             )}
                           </tr>
                         ))}
