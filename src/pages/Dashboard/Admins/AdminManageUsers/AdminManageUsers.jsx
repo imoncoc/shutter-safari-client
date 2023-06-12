@@ -159,12 +159,13 @@ const AdminManageUsers = () => {
                                 : cartItem.role}
                             </td>
                             <td className="text-center">
-                              {cartItem.role === "admin" ? (
+                              {cartItem.role === "admin"  ? (
                                 <button className="btn btn-success" disabled>
                                   Admin
                                 </button>
                               ) : (
                                 <button
+                                  title="Make Admin"
                                   onClick={() => handleAdmin(cartItem)}
                                   className="btn btn-success"
                                 >
@@ -180,6 +181,7 @@ const AdminManageUsers = () => {
                               ) : (
                                 <button
                                   className="btn btn-info"
+                                  title="Make Instructor"
                                   onClick={() => handleInstructor(cartItem)}
                                 >
                                   Instructor
@@ -193,6 +195,7 @@ const AdminManageUsers = () => {
                                 </button>
                               ) : (
                                 <button
+                                  title="Make User"
                                   className="btn btn-warning"
                                   onClick={() => handleUser(cartItem)}
                                 >

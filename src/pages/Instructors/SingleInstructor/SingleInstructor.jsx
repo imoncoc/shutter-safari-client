@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChalkboardUser, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import PrimaryButton from '../../../components/Reuseable/Button/PrimaryButton/PrimaryButton';
+import { toast } from 'react-toastify';
 
 const SingleInstructor = ({ instructor }) => {
     // console.log(instructor)
@@ -15,6 +16,18 @@ const SingleInstructor = ({ instructor }) => {
       clsImage,
       sameEmailCount
     } = instructor;
+
+
+
+
+
+    const handleSeeClasses = () => {
+      toast.info("Classes details will update soon.", {
+        position: toast.POSITION.TOP_CENTER,
+      });
+    }
+
+
   return (
     <div className="col-10 mx-auto my-5 col-md-6 col-lg-4">
       <div className="card shadow">
@@ -59,7 +72,7 @@ const SingleInstructor = ({ instructor }) => {
             </p>
           </div>
 
-          <Link>
+          <Link onClick={handleSeeClasses}>
             <PrimaryButton name="See Classes" width={"w-100"}></PrimaryButton>
           </Link>
         </div>

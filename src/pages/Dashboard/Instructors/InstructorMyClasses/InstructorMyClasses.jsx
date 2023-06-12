@@ -5,6 +5,7 @@ import './InstructorMyClasses.css';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import SecondaryButton from '../../../../components/Reuseable/Button/SecondaryButton/SecondaryButton';
+import { toast } from 'react-toastify';
 
 const InstructorMyClasses = () => {
 
@@ -20,7 +21,11 @@ const InstructorMyClasses = () => {
    },
  });
 
- console.log(myClasses)
+ const handleUpdate = () => {
+  toast.info("Update class will update soon.", {
+    position: toast.POSITION.TOP_CENTER,
+  });
+ }
 
 
  
@@ -83,7 +88,7 @@ const InstructorMyClasses = () => {
                             <td className="text-center">{cartItem.name}</td>
                             <td className="text-end">${cartItem.price}</td>
                             <td className="text-center">
-                              <Link>
+                              <Link onClick={handleUpdate}>
                                 <span title="pay">
                                   <SecondaryButton name="update"></SecondaryButton>
                                 </span>
