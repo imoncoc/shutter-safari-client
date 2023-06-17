@@ -67,7 +67,7 @@ const InstructorAddAClass = () => {
             text: "Successfully added chocolate!",
           });
           reset();
-          navigate("/my-toys");
+          navigate("/");
         }
       })
       .catch((error) => {

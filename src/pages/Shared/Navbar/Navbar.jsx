@@ -56,14 +56,17 @@ const Navbar = () => {
           <div className="container">
             <Link to="/" className="navbar-brand my-0 py-0">
               <div className="d-flex align-items-center">
-                <h2 style={{ color: "var(--main-lime-600)" }}>
+                <h2
+                  className="navbar-res-icon"
+                  style={{ color: "var(--main-lime-600)" }}
+                >
                   <FontAwesomeIcon icon={faCameraRetro} />
                 </h2>
                 <h4
-                  className="fw-bold text-uppercase ms-3"
+                  className="fw-bold text-uppercase ms-2 navbar-res-icon"
                   style={{ color: "var(--main-lime-600)" }}
                 >
-                  Shutter Safari
+                  Shutter-Safari
                 </h4>
               </div>
             </Link>
@@ -202,7 +205,7 @@ const Navbar = () => {
                 )} */}
                 </li>
                 <li className="my-1 mt-3 mt-sm-0">
-                  <div onClick={handleToggle}>
+                  <div className="my-2 mx-3" onClick={handleToggle}>
                     {theme ? (
                       <span className="toggle-icon">
                         <FontAwesomeIcon
