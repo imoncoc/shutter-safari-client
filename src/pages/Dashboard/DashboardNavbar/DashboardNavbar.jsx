@@ -12,8 +12,9 @@ import {
   faUsers,
   faListCheck,
   faCameraRetro,
+  faCreditCard,
 } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import TestNav from "../TestNav/TestNav";
 import useAdmin from "../../../hooks/useAdmin";
 import useInstructor from "../../../hooks/useInstructor";
@@ -113,7 +114,11 @@ const DashboardNavbar = () => {
                     </a>
                   </li>
                   <li>
-                    <Link to="/" className="dropdown-item" onClick={handleLogOut}>
+                    <Link
+                      to="/"
+                      className="dropdown-item"
+                      onClick={handleLogOut}
+                    >
                       <ThirdButton width="w-100" name="Logout"></ThirdButton>
                     </Link>
                   </li>
@@ -148,7 +153,7 @@ const DashboardNavbar = () => {
                   </li>
 
                   <li>
-                    <Link
+                    <NavLink
                       to={"/dashboard/user-home"}
                       href="#"
                       className="nav-link px-3"
@@ -157,10 +162,10 @@ const DashboardNavbar = () => {
                         <FontAwesomeIcon icon={faHouse} />
                       </span>
                       <span>Home</span>
-                    </Link>
+                    </NavLink>
                   </li>
                   <li>
-                    <Link
+                    <NavLink
                       to={"/dashboard/user-myClass"}
                       href="#"
                       className="nav-link px-3"
@@ -168,11 +173,11 @@ const DashboardNavbar = () => {
                       <span className="me-2">
                         <FontAwesomeIcon icon={faCalendarDays} />
                       </span>
-                      <span>My Class</span>
-                    </Link>
+                      <span>My Selected Classes</span>
+                    </NavLink>
                   </li>
                   <li>
-                    <Link
+                    <NavLink
                       to={"/dashboard/user-enrolled-class"}
                       href="#"
                       className="nav-link px-3"
@@ -181,7 +186,19 @@ const DashboardNavbar = () => {
                         <FontAwesomeIcon icon={faCartShopping} />
                       </span>
                       <span>My Enrolled Class</span>
-                    </Link>
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to={"/dashboard/user-payment-history"}
+                      href="#"
+                      className="nav-link px-3"
+                    >
+                      <span className="me-2">
+                        <FontAwesomeIcon icon={faCreditCard} />
+                      </span>
+                      <span>My Payment History</span>
+                    </NavLink>
                   </li>
                 </>
               )}
@@ -195,7 +212,7 @@ const DashboardNavbar = () => {
                   </li>
 
                   <li>
-                    <Link
+                    <NavLink
                       to={"/dashboard/instructor-home"}
                       href="#"
                       className="nav-link px-3"
@@ -204,10 +221,10 @@ const DashboardNavbar = () => {
                         <FontAwesomeIcon icon={faHouse} />
                       </span>
                       <span>Home</span>
-                    </Link>
+                    </NavLink>
                   </li>
                   <li>
-                    <Link
+                    <NavLink
                       to={"/dashboard/instructor-myClasses"}
                       href="#"
                       className="nav-link px-3"
@@ -216,10 +233,10 @@ const DashboardNavbar = () => {
                         <FontAwesomeIcon icon={faCalendarDays} />
                       </span>
                       <span>My Classes</span>
-                    </Link>
+                    </NavLink>
                   </li>
                   <li>
-                    <Link
+                    <NavLink
                       to={"/dashboard/instructor-addAClass"}
                       href="#"
                       className="nav-link px-3"
@@ -228,7 +245,7 @@ const DashboardNavbar = () => {
                         <FontAwesomeIcon icon={faCartPlus} />
                       </span>
                       <span>Add A Class</span>
-                    </Link>
+                    </NavLink>
                   </li>
                 </>
               )}
@@ -242,7 +259,7 @@ const DashboardNavbar = () => {
                   </li>
 
                   <li>
-                    <Link
+                    <NavLink
                       to={"/dashboard/admin-home"}
                       href="#"
                       className="nav-link px-3"
@@ -251,10 +268,10 @@ const DashboardNavbar = () => {
                         <FontAwesomeIcon icon={faHouse} />
                       </span>
                       <span>Home</span>
-                    </Link>
+                    </NavLink>
                   </li>
                   <li>
-                    <Link
+                    <NavLink
                       to={"/dashboard/admin-manageClasses"}
                       href="#"
                       className="nav-link px-3"
@@ -263,10 +280,10 @@ const DashboardNavbar = () => {
                         <FontAwesomeIcon icon={faListCheck} />
                       </span>
                       <span>Manage Classes</span>
-                    </Link>
+                    </NavLink>
                   </li>
                   <li>
-                    <Link
+                    <NavLink
                       to={"/dashboard/admin-manageUsers"}
                       href="#"
                       className="nav-link px-3"
@@ -275,7 +292,7 @@ const DashboardNavbar = () => {
                         <FontAwesomeIcon icon={faUsers} />
                       </span>
                       <span>Manage Users</span>
-                    </Link>
+                    </NavLink>
                   </li>
                 </>
               )}
@@ -323,28 +340,28 @@ const DashboardNavbar = () => {
               </li>
 
               <li>
-                <Link to={"/"} href="#" className="nav-link px-3">
+                <NavLink to={"/"} href="#" className="nav-link px-3">
                   <span className="me-2">
                     <FontAwesomeIcon icon={faHouse} />
                   </span>
                   <span>Home</span>
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link to={"/instructors"} href="#" className="nav-link px-3">
+                <NavLink to={"/instructors"} href="#" className="nav-link px-3">
                   <span className="me-2">
                     <FontAwesomeIcon icon={faPersonChalkboard} />
                   </span>
                   <span>Instructors</span>
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link to={"/classes"} href="#" className="nav-link px-3">
+                <NavLink to={"/classes"} href="#" className="nav-link px-3">
                   <span className="me-2">
                     <FontAwesomeIcon icon={faChalkboardUser} />
                   </span>
                   <span>Classes</span>
-                </Link>
+                </NavLink>
               </li>
 
               <li className="my-4">
@@ -356,7 +373,6 @@ const DashboardNavbar = () => {
       </div>
       {/* <!-- offcanvas --> */}
       <TestNav></TestNav>
-      
     </>
   );
 };

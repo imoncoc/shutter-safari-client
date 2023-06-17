@@ -18,6 +18,7 @@ import AdminHome from "../pages/Dashboard/Admins/AdminHome/AdminHome";
 import AdminManageClasses from "../pages/Dashboard/Admins/AdminManageClasses/AdminManageClasses";
 import AdminManageUsers from "../pages/Dashboard/Admins/AdminManageUsers/AdminManageUsers";
 import UserPayment from "../pages/Dashboard/Users/UserPayment/UserPayment";
+import UserPaymentHistory from "../pages/Dashboard/Users/UserPaymentHistory/UserPaymentHistory";
 
 const router = createBrowserRouter([
   {
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
       {
         path: "user-payment/:id",
         element: <UserPayment></UserPayment>,
+      },
+      {
+        path: "user-payment-history",
+        element: <UserPaymentHistory></UserPaymentHistory>,
       },
       {
         path: "instructor-home",
