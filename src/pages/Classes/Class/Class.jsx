@@ -11,6 +11,7 @@ import { toast } from 'react-toastify';
 import { useContext } from 'react';
 import useCart from '../../../hooks/useCart';
 import Swal from 'sweetalert2';
+import { Fade } from 'react-awesome-reveal';
 
 
 const Class = ({classItem}) => {
@@ -44,7 +45,7 @@ const Class = ({classItem}) => {
       inactiveFillColor: "#C6F6D5",
     };
 
-    const handleAddToCart = (classItem) => {
+    const handleAddToCart = () => {
       const cartItem = {
         classId: _id,
         availableSeats,
@@ -117,64 +118,71 @@ const Class = ({classItem}) => {
 
     return (
       <div className="col-10 col-md-6 col-lg-4 mx-auto my-5">
-        <div className={`class-card ${availableSeats === 0 ? "sit-red" : ""}`}>
-          <LazyLoad height={"100%"}>
-            <img src={clsImage} alt="" className="img-fluid class-img" />
-          </LazyLoad>
-          <div>
-            <h2 className="card-title">{name}</h2>
-            <h3 className="card-price">${price}</h3>
-            <div className="d-flex mb-2">
-              <Rating
-                style={{ maxWidth: 110 }}
-                value={ratings}
-                itemStyles={myStyles}
-                readOnly
-              />
-              <span className="card-icon-rating">{ratings}</span>
-            </div>
-            <p className="card-description">
-              {" "}
-              <span className="me-2 text-lime-600">
-                <FontAwesomeIcon icon={faFileSignature} />
-              </span>
-              {instructorName}
-            </p>
-            <p className="card-description">
-              <span className="me-2 text-lime-600">
-                <FontAwesomeIcon icon={faCartPlus} />
-              </span>
-              More than {purchaseCourse} purchased
-            </p>
-            <p className="card-description">
-              <span className="me-2 text-lime-600">
-                <FontAwesomeIcon icon={faCheck} />
-              </span>
-              Available {availableSeats} sets
-            </p>
-            {/* <div className="d-flex justify-content-between">
+          <Fade>
+          <div
+            className={`class-card ${availableSeats === 0 ? "sit-red" : ""}`}
+          >
+            <LazyLoad height={"100%"}>
+              <img src={clsImage} alt="" className="img-fluid class-img" />
+            </LazyLoad>
+            <div>
+              <h2 className="card-title">{name}</h2>
+              <h3 className="card-price">${price}</h3>
+              <div className="d-flex mb-2">
+                <Rating
+                  style={{ maxWidth: 110 }}
+                  value={ratings}
+                  itemStyles={myStyles}
+                  readOnly
+                />
+                <span className="card-icon-rating">{ratings}</span>
+              </div>
+              <p className="card-description">
+                {" "}
+                <span className="me-2 text-lime-600">
+                  <FontAwesomeIcon icon={faFileSignature} />
+                </span>
+                {instructorName}
+              </p>
+              <p className="card-description">
+                <span className="me-2 text-lime-600">
+                  <FontAwesomeIcon icon={faCartPlus} />
+                </span>
+                More than {purchaseCourse} purchased
+              </p>
+              <p className="card-description">
+                <span className="me-2 text-lime-600">
+                  <FontAwesomeIcon icon={faCheck} />
+                </span>
+                Available {availableSeats} sets
+              </p>
+              {/* <div className="d-flex justify-content-between">
               <PrimaryButton name={"Select"}></PrimaryButton>
               <SecondaryButton
                 name={"Details"}
                 icon={<FontAwesomeIcon className="ms-2" icon={faArrowRight} />}
               ></SecondaryButton>
             </div> */}
-            {user ? (
-              <span onClick={() => handleAddToCart(classItem)}>
-                <PrimaryButton
-                  width={"w-100"}
-                  name={"Select"}
-                  disabled={!isUser || availableSeats === 0}
-                ></PrimaryButton>
-              </span>
-            ) : (
-              <Link to="/login" onClick={handleRedirectToLogin}>
-                <PrimaryButton width={"w-100"} name={"Select"}></PrimaryButton>
-              </Link>
-            )}
+              {user ? (
+                <span onClick={() => handleAddToCart(classItem)}>
+                  <PrimaryButton
+                    width={"w-100"}
+                    name={"Select"}
+                    disabled={!isUser || availableSeats === 0}
+                  ></PrimaryButton>
+                </span>
+              ) : (
+                <Link to="/login" onClick={handleRedirectToLogin}>
+                  <PrimaryButton
+                    width={"w-100"}
+                    name={"Select"}
+                  ></PrimaryButton>
+                </Link>
+              )}
+            </div>
           </div>
+      </Fade>
         </div>
-      </div>
     );
 };
 

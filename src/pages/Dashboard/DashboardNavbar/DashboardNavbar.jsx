@@ -28,9 +28,8 @@ const DashboardNavbar = () => {
   const [isInstructor] = useInstructor();
   const [isUser] = useUser();
   const { user, logOut } = useContext(AuthContext);
-  // console.log('isAdmin', isAdmin);
-  // console.log("isInstructor", isInstructor);
-  //  console.log("isUser", isUser);
+  
+  
 
    const handleLogOut = () => {
      logOut()

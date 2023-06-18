@@ -3,11 +3,15 @@ import './UserHome.css';
 import useCart from '../../../../hooks/useCart';
 import { useEffect, useState } from 'react';
 import useAxiosSecure from '../../../../hooks/useAxiosSecure';
+import useAuth from '../../../../hooks/useAuth';
 
 const UserHome = () => {
   const [cart] = useCart();
   const [payments, setPayments] = useState([]);
   const [axiosSecure] = useAxiosSecure();
+  const { user } = useAuth();
+
+  const newPayments = payments?.filter((item) => item.email === user.email);
 
   useEffect(() => {
     axiosSecure("/payments").then((res) => {
@@ -16,7 +20,7 @@ const UserHome = () => {
     });
   }, [axiosSecure]);
 
-  const totalPayment = Object.values(payments).reduce(
+  const totalPayment = Object.values(newPayments).reduce(
     (sum, item) => sum + item.price,
     0
   );
@@ -58,7 +62,7 @@ const UserHome = () => {
               <div className="card bg-warning text-dark h-100">
                 <div className="card-body py-5 text-center">
                   <h5>Total Enrolled Classes</h5>
-                  <h2>{payments.length}</h2>
+                  <h2>{newPayments.length}</h2>
                   <p>Check View Details</p>
                 </div>
                 <div className="card-footer d-flex">
@@ -82,7 +86,10 @@ const UserHome = () => {
                   <p>Check View Details</p>
                 </div>
                 <div className="card-footer d-flex">
-                  <Link to="/dashboard/user-payment-history" className="text-white">
+                  <Link
+                    to="/dashboard/user-payment-history"
+                    className="text-white"
+                  >
                     View Details
                   </Link>
                   <span className="ms-auto">
