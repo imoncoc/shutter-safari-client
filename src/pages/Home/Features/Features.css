@@ -1,0 +1,15 @@
+
+.feature-icon{
+    color: var(--main-soft-blue);
+}
+
+.feature-title{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--main-very-dark-blue);
+}
+
+.feature-description{
+    font-size: .9rem;
+    color: var(--main-grayish-blue);
+}

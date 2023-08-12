@@ -51,6 +51,9 @@ body {
 .bg-lime-600{
   color: var(--main-lime-600) !important;
 }
+.text-main-very-dark-blue{
+  color: var(--main-very-dark-blue);
+}
 
 .border-lime{
   border: .3rem solid var(--main-lime-500) ;
