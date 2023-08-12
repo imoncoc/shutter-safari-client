@@ -1,0 +1,27 @@
+
+.membership-2{
+    border: 5px solid var(--main-lime-500) !important;
+}
+
+.popular-label {
+    position: absolute;
+    display: block;
+    background-color: var(--main-lime-500);
+    color: var(--main-very-dark-blue);
+    padding: 5px 45px;
+    font-size: 15px;
+    font-weight: 600;
+    text-shadow: 0 1px 1px rgb(0 0 0 20%);
+    text-transform: uppercase;
+    left: -35px;
+    top: 30px;
+    transform: rotate(-45deg);
+}
+
+@media (max-width: 576px) {
+    .popular-label {
+        top: -10px;
+        left: -10px;
+    }
+}
+

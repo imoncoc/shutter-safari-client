@@ -18,7 +18,7 @@ const Features = () => {
       <Fade>
         <div className="container">
           <div className="row">
-            <div className="col-10 col-md-6 my-5">
+            <div className="col-10 col-md-6 my-5 mx-auto">
               <h4 className="text-main-very-dark-blue  mb-3 text-start">
                 Cultivate your photography skills through interactive lessons,
                 hands-on assignments, and personalized feedback from industry
@@ -30,7 +30,7 @@ const Features = () => {
                 alt=""
               />
             </div>
-            <div className="col-10 col-md-6 my-5">
+            <div className="col-10 col-md-6 my-5 mx-auto">
               <div className="row">
                 <div className="col-6">
                   <p className="feature-icon">

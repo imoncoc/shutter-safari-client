@@ -48,6 +48,9 @@ body {
 .text-lime-600{
   color: var(--main-lime-600) !important;
 }
+.text-main-soft-red {
+  color: var(--main-soft-red) !important;
+}
 .bg-lime-600{
   color: var(--main-lime-600) !important;
 }
